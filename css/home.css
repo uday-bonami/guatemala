@@ -1,0 +1,76 @@
+
+.hero-bg{
+    background: url(../img/home-bg-img.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.hero-content{
+    width: 100vw;
+    height: 100vh;
+    display: table-cell;
+    vertical-align: middle;
+
+}
+.hero-heading h1{
+    font-size: 65px;
+    font-weight: bold;
+    line-height: 87.75px;
+    margin-top: 7rem;
+}
+.hero-heading p{
+    font-size: 20px;
+    color: #000;
+    font-weight: 500;
+    line-height: 30px;
+    text-align: center;
+}
+.hero-content .form-control{
+    background-color: #F6F6F6 !important;
+    border:none;
+    border-radius: 10px;
+    padding: 12px 14px !important;
+    color: #5C5C5C !important;
+}
+.hero-content .main-btn{
+    margin-top: 2rem;
+}
+.booking-form{
+    border-radius: 10px;   
+}
+/* car */
+.car-one{
+	
+	position: absolute;
+	bottom: -7px;
+	left: 30%;
+	-webkit-animation: myfirst 10s linear infinite;
+	animation: myfirst 10s linear infinite;
+    
+}
+@-moz-keyframes myfirst {
+    0% {
+      left: -25%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+  
+  @-webkit-keyframes myfirst {
+    0% {
+      left: -25%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+  
+  @keyframes myfirst {
+    0% {
+      left: -25%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+  

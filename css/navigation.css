@@ -1,0 +1,27 @@
+.navbar-collapse ul{
+    border-bottom: 1px solid #fff !important;
+}
+.navbar-collapse ul li{
+    padding: 0 15px;
+    font-size: 15px;
+    color: #fff;
+}
+.navbar-collapse ul li a{
+    color: #fff !important;
+    font-weight: 100;
+}
+    .navbar-collapse ul li a::after {
+        content: '';
+        display: none;
+        border-bottom: 3px solid #F7CC7F;
+        padding-bottom: 14px;
+        margin-bottom: -27px;
+        margin-right: 8px;
+        margin-left: 8px;
+    }
+
+
+
+.navbar-collapse ul li:hover a::after{
+    display: block;
+} 
