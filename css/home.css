@@ -1,76 +1,137 @@
-
-.hero-bg{
-    background: url(../img/home-bg-img.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+/* Hero Section */
+.hero-bg {
+  background: url(../img/home-bg-img.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
-.hero-content{
-    width: 100vw;
-    height: 100vh;
-    display: table-cell;
-    vertical-align: middle;
-
+.hero-content {
+  width: 100vw;
+  height: 78vh;
+  display: table-cell;
+  vertical-align: bottom;
 }
-.hero-heading h1{
-    font-size: 65px;
-    font-weight: bold;
-    line-height: 87.75px;
-    margin-top: 7rem;
+.hero-heading {
+  margin-bottom: 2rem;
 }
-.hero-heading p{
-    font-size: 20px;
-    color: #000;
-    font-weight: 500;
-    line-height: 30px;
-    text-align: center;
+.hero-heading h1 {
+  font-size: 65px;
+  font-weight: bold;
+  line-height: 87.75px;
 }
-.hero-content .form-control{
-    background-color: #F6F6F6 !important;
-    border:none;
-    border-radius: 10px;
-    padding: 12px 14px !important;
-    color: #5C5C5C !important;
+.hero-heading p {
+  font-size: 20px;
+  color: #000;
+  font-weight: 500;
+  line-height: 30px;
+  text-align: center;
 }
-.hero-content .main-btn{
-    margin-top: 2rem;
+.hero-content .form-control {
+  background-color: #f6f6f6 !important;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 14px !important;
+  color: #5c5c5c !important;
 }
-.booking-form{
-    border-radius: 10px;   
+.hero-content .main-btn {
+  margin-top: 2rem;
+}
+.booking-form {
+  border-radius: 10px;
 }
 /* car */
-.car-one{
-	
-	position: absolute;
-	bottom: -7px;
-	left: 30%;
-	-webkit-animation: myfirst 10s linear infinite;
-	animation: myfirst 10s linear infinite;
-    
+.car-one {
+  position: relative;
+  bottom: -10px;
+  left: 30%;
+  -webkit-animation: myfirst 10s linear infinite;
+  animation: myfirst 10s linear infinite;
 }
 @-moz-keyframes myfirst {
-    0% {
-      left: -25%;
-    }
-    100% {
-      left: 100%;
-    }
+  0% {
+    left: -25%;
   }
-  
-  @-webkit-keyframes myfirst {
-    0% {
-      left: -25%;
-    }
-    100% {
-      left: 100%;
-    }
+  100% {
+    left: 100%;
   }
-  
-  @keyframes myfirst {
-    0% {
-      left: -25%;
-    }
-    100% {
-      left: 100%;
-    }
+}
+
+@-webkit-keyframes myfirst {
+  0% {
+    left: -25%;
   }
-  
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes myfirst {
+  0% {
+    left: -25%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+/* End Hero Section */
+.free-beer {
+  background-color: #fff;
+  border: 0.922167px solid #eeeeee;
+  box-sizing: border-box;
+  border-radius: 32.2758px;
+  padding: 20px;
+}
+.beer-content a {
+  color: #3c8f7c;
+}
+.beer-content a .fas {
+  margin-top: 2px;
+}
+/*Explore card*/
+.explore-card {
+  background: #ffffff;
+  box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.07);
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: -100px;
+  position: relative;
+  z-index: 99;
+}
+
+.explore-card h4 {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 35px;
+  color: #181818;
+}
+.explore-card p {
+  font-size: 16px;
+  line-height: 35px;
+  /* identical to box height, or 219% */
+
+  color: #353535;
+}
+.stars i{
+  color: #FEB546;
+}
+.go-icon{
+  background: #1F4056;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.go-icon i{
+  line-height: 41px;
+  color: #fff;
+}
+/* about */
+.bg-about{
+  background: url('../img/about-bg.png');
+  background-size: 100% 100%;
+}
+/* service */
+.bg-service{
+  background: url('../img/service-bg.png') ;
+  background-size: 100% 100%;
+}
