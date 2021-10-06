@@ -1,0 +1,86 @@
+:root{
+    --heading-first-size: 3.5rem;
+    --heading-second-size: 55px;
+    --para_first-size:1.2rem;;
+    --bold-first: 500;
+    --bold-second: 600;
+    --common-color: #1F4056;
+    --line-height-first : 65px;
+}
+.about_bg{
+    background-image: url("../img/about_bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 60vh;
+}
+.about_hero{
+    display: table-cell;
+    vertical-align: middle;
+    height: 60vh;
+    width: 100vw;
+}
+.about_hero > h1{
+    font-weight: bold;
+    font-size: var(--heading-first-size);
+}
+.about_link1{
+    font-weight: var(--bold-first);
+    font-size:var(--para_first-size);
+}
+.about_link2{
+    color: #7ABAB5;
+    font-weight:var(--bold-first);
+    font-size: var(--para_first-size);
+}
+/*reusable Class */
+.about_section-title{
+    font-weight: var(--bold-second);
+    font-size: var(--heading-second-size);
+    line-height: var(--line-height-first);
+    color: var(--common-color);
+}
+/*About Section1*/
+.about_btn{
+    background-color:var(--common-color) !important;
+    padding: 10px 0;
+}
+
+@media (max-width: 1400px){
+    :root{
+        --heading-second-size: 45px;
+        --line-height-first : 55px;
+    }
+}
+@media (max-width: 768px){
+    :root{
+        --heading-first-size: 2.5rem;
+        --para_first-size: .900rem;
+    }
+}
+/*About Section2*/
+.about_section2-bg{
+    background-image: url("../img/about_section2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 55vh;
+}
+.about_section2-title{
+    font-weight: var(--bold-second);
+}
+.about_section2-para{
+    font-weight: var(--bold-first);
+}
+.about_progress{
+   width: 166px;
+   height: 7px;
+   background-color:#E9E9E9;
+   border-radius: 5rem;
+}
+.about_progress-per{
+    width: 95px;
+    height: 7px;
+    background-color:#2AD695;
+    border-radius: 5rem;
+}
