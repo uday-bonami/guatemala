@@ -77,3 +77,34 @@ a {
     border-radius: 35px;
     padding: 20px;
 }
+/*  */
+.f-social ul li a{
+  padding-left: 10px;
+ 
+  
+  
+}
+.f-social ul li a i{
+  font-size: 21px;
+  border: 1px solid;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 38px;
+  text-align: center;
+}
+.f-social ul li a i.yt {
+  color: #FF0000;
+}
+.f-social ul li a i.fb {
+  color: #4267B2;
+}
+.f-social ul li a i.ig{
+  color:#BC2A8D ;
+}
+.f-social ul li a i.tw{
+  color :#1DA1F2;
+}
+.f-social ul li a i.li{
+  color :#0077B5;
+}
