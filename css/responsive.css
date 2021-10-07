@@ -40,6 +40,20 @@
   .accordion-button {
     padding: 1.1rem 1rem;
   }
+
+  .cardSection .card {
+    margin: 0.8rem 0;
+  }
+  .FreeQuote {
+    padding: 1rem 0.5rem;
+  }
+  .FreeQuote h1 {
+    font-size: 40px;
+  }
+
+  .about_section2-bg h3 {
+    font-size: 2rem;
+  }
 }
 
 @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
@@ -81,5 +95,25 @@
   .faq_section2-title {
     font-size: 25px;
     line-height: 2rem;
+  }
+
+  .cardSection .card {
+    margin: 0.8rem 0;
+  }
+  .FreeQuote {
+    padding: 1rem 0.5rem;
+  }
+  .FreeQuote h1 {
+    font-size: 40px;
+  }
+
+  .aboutSectionOne {
+    text-align: center;
+  }
+  .aboutSectionOneContent {
+    margin-top: 1rem;
+  }
+  .footer-padding {
+    padding: 0;
   }
 }
