@@ -1,3 +1,21 @@
+@media (max-width: 500px) {
+  .about_section2-bg h3 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 500px) {
+  .aboutSectionOne {
+    text-align: center;
+  }
+  .aboutSectionOneContent {
+    margin-top: 1rem;
+  }
+  .footer-padding {
+    padding: 0;
+  }
+}
+
 @media screen and (min-device-width: 320px) and (max-device-width: 768px) {
   .cardSection .card {
     margin: 0.8rem 0;

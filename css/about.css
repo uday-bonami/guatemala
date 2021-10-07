@@ -136,3 +136,8 @@
 .slick-dots {
   bottom: -55px !important;
 }
+
+.slick-next,
+.slick-prev {
+  display: none !important;
+}
