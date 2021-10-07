@@ -57,6 +57,9 @@ a {
 .section-padding-1 {
   padding-bottom: 60px;
 }
+.section-padding-3 {
+  padding: 20px 0;
+}
 /* height */
 .h-100vh {
   height: 100vh;
