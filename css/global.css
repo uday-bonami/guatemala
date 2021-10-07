@@ -54,6 +54,9 @@ a {
 .section-padding {
   padding: 60px 0;
 }
+.section-padding-1 {
+  padding-bottom: 60px;
+}
 /* height */
 .h-100vh {
   height: 100vh;
@@ -72,19 +75,16 @@ a {
   font-size: 55px;
   line-height: 82px;
 }
-.service-container{
-    box-shadow: 0px 30px 80px rgba(0, 0, 0, 0.07);  
-    border-radius: 35px;
-    padding: 20px;
+.service-container {
+  box-shadow: 0px 30px 80px rgba(0, 0, 0, 0.07);
+  border-radius: 35px;
+  padding: 20px;
 }
 /*  */
-.f-social ul li a{
+.f-social ul li a {
   padding-left: 10px;
- 
-  
-  
 }
-.f-social ul li a i{
+.f-social ul li a i {
   font-size: 21px;
   border: 1px solid;
   border-radius: 50%;
@@ -94,17 +94,30 @@ a {
   text-align: center;
 }
 .f-social ul li a i.yt {
-  color: #FF0000;
+  color: #ff0000;
 }
 .f-social ul li a i.fb {
-  color: #4267B2;
+  color: #4267b2;
 }
-.f-social ul li a i.ig{
-  color:#BC2A8D ;
+.f-social ul li a i.ig {
+  color: #bc2a8d;
 }
-.f-social ul li a i.tw{
-  color :#1DA1F2;
+.f-social ul li a i.tw {
+  color: #1da1f2;
 }
-.f-social ul li a i.li{
-  color :#0077B5;
+.f-social ul li a i.li {
+  color: #0077b5;
+}
+
+/* button */
+.submitButtonSend {
+  border: none;
+  padding: 1rem 1.5rem;
+  background: #daffff;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.footerMarginClass {
+  margin-top: -20px;
 }

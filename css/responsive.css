@@ -1,0 +1,11 @@
+@media screen and (min-device-width: 320px) and (max-device-width: 768px) {
+  .cardSection .card {
+    margin: 0.8rem 0;
+  }
+  .FreeQuote {
+    padding: 1rem 0.5rem;
+  }
+  .FreeQuote h1 {
+    font-size: 40px;
+  }
+}

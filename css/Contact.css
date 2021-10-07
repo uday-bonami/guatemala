@@ -1,0 +1,68 @@
+/* card Section */
+.cardSection .row .card {
+  box-shadow: 0px 4px 100px 50px rgba(0, 0, 0, 0.05);
+}
+.iconDiv {
+  width: 120px;
+  height: 120px;
+  background-color: #daffff;
+  border-radius: 50%;
+  margin-top: 2rem;
+}
+.card-body h5 {
+  font-weight: bold;
+}
+.list-group-flush {
+  width: 100%;
+}
+/* card Section */
+
+/* mapSection */
+.mapSection {
+  width: 100%;
+  height: 60vh;
+}
+/* mapSection */
+/* free quote */
+.FreeQuote {
+  margin-top: -200px;
+  z-index: 999;
+  position: relative;
+  margin-bottom: 20px;
+  background-image: url(../img/grou-2.png);
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+.foreDiv {
+  padding: 30px 0;
+  background: #1f4056;
+  border-radius: 5px;
+  background-image: url(/img/bg-11.png);
+  background-size: cover;
+  background-position: center;
+}
+.foreDiv h1 {
+  color: #fff;
+  font-size: 55px;
+}
+.foreDiv .innerFormDiv {
+  width: 60%;
+  margin: auto;
+}
+.foreDiv input,
+.foreDiv textarea {
+  width: 100%;
+  margin: 1rem;
+  border: 1px solid #efefef;
+  background: transparent;
+  color: #efefef;
+  border-radius: 5px;
+  height: 60px;
+  padding: 0.5rem;
+}
+
+.foreDiv input::placeholder,
+.foreDiv textarea::placeholder {
+  color: #efefef;
+}
+/* free quote */
