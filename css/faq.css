@@ -59,6 +59,7 @@
 .faq_section2-title{
     font-size: 45px;
     font-weight: var(--bold-second);
+    line-height: 3rem;
 }
 /*Faq Section3*/
 .faq_section3-bg{
@@ -78,26 +79,3 @@
     background-color: #1F4056;
     font-size: .950rem;
 }
-@media (min-width:576px) and (max-width: 768px) {
-    :root{
-        --heading-second-size: 35px;
-    }
-    .faq_section2-title{
-        font-size: 30px;
-    }
-  }
-  @media (max-width: 576px) {
-    :root{
-        --heading-second-size: 30px;
-    }
-    .faq_section1-title{
-        line-height: 2.5rem;
-    }
-    .accordion-button{
-        padding: 1.1rem 1rem;
-    }
-    .faq_section2-title{
-        font-size: 25px;
-        line-height: 2rem;
-    }
-  }
