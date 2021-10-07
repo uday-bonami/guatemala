@@ -6,7 +6,7 @@
 .accordion-button{
     font-size: .900rem;
     font-weight: 500;
-    padding: 1.3rem 4rem;
+    padding: 1.1rem 3rem;
     border:1px solid rgba(0,0,0,.125) !important;
 }
 .accordion-body{
@@ -42,7 +42,6 @@
 /*form*/
 .form_container{
     background-color:#3C8F7C;
-    height: 605px !important;
 }
 .form-control {
     padding: 1rem 1.75rem;
@@ -79,3 +78,26 @@
     background-color: #1F4056;
     font-size: .950rem;
 }
+@media (min-width:576px) and (max-width: 768px) {
+    :root{
+        --heading-second-size: 35px;
+    }
+    .faq_section2-title{
+        font-size: 30px;
+    }
+  }
+  @media (max-width: 576px) {
+    :root{
+        --heading-second-size: 30px;
+    }
+    .faq_section1-title{
+        line-height: 2.5rem;
+    }
+    .accordion-button{
+        padding: 1.1rem 1rem;
+    }
+    .faq_section2-title{
+        font-size: 25px;
+        line-height: 2rem;
+    }
+  }
