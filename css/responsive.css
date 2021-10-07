@@ -1,24 +1,24 @@
 @media (min-width: 767px) and (max-width: 1024px) {
-  .hero-bg{
+  .hero-bg {
     overflow-x: hidden;
   }
 }
 @media (min-width: 480px) and (max-width: 767px) {
-  :root{
-      --heading-second-size: 35px;
+  :root {
+    --heading-second-size: 35px;
   }
-  .hero-bg{
+  .hero-bg {
     overflow-x: hidden;
   }
-  .faq_section2-title{
-      font-size: 30px;
+  .faq_section2-title {
+    font-size: 30px;
   }
-  .banner_container{
+  .banner_container {
     margin-top: 8rem;
   }
-  .faq_section2-title{
-      font-size: 25px;
-      line-height: 2rem;
+  .faq_section2-title {
+    font-size: 25px;
+    line-height: 2rem;
   }
   .hero-heading h1 {
     font-size: 35px;
@@ -27,29 +27,43 @@
   .hero-heading p {
     font-size: 14px;
   }
-  .car-one{
+  .car-one {
     width: 18rem;
   }
   /*Faq*/
-  :root{
+  :root {
     --heading-second-size: 30px;
-}
-.faq_section1-title{
+  }
+  .faq_section1-title {
     line-height: 2.5rem;
-}
-.accordion-button{
+  }
+  .accordion-button {
     padding: 1.1rem 1rem;
-}
+  }
+
+  .cardSection .card {
+    margin: 0.8rem 0;
+  }
+  .FreeQuote {
+    padding: 1rem 0.5rem;
+  }
+  .FreeQuote h1 {
+    font-size: 40px;
+  }
+
+  .about_section2-bg h3 {
+    font-size: 2rem;
+  }
 }
 
 @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  .hero-bg{
+  .hero-bg {
     overflow-x: hidden;
   }
   .cardSection .card {
     margin: 0.8rem 0;
   }
-  .banner_container{
+  .banner_container {
     margin-top: 8rem;
   }
   .hero-heading h1 {
@@ -59,7 +73,7 @@
   .hero-heading p {
     font-size: 14px;
   }
-  .car-one{
+  .car-one {
     width: 15rem;
   }
   .FreeQuote {
@@ -69,17 +83,37 @@
     font-size: 40px;
   }
   /*Faq*/
-  :root{
+  :root {
     --heading-second-size: 30px;
-}
-.faq_section1-title{
+  }
+  .faq_section1-title {
     line-height: 2.5rem;
-}
-.accordion-button{
+  }
+  .accordion-button {
     padding: 1.1rem 1rem;
-}
-.faq_section2-title{
+  }
+  .faq_section2-title {
     font-size: 25px;
     line-height: 2rem;
-}
+  }
+
+  .cardSection .card {
+    margin: 0.8rem 0;
+  }
+  .FreeQuote {
+    padding: 1rem 0.5rem;
+  }
+  .FreeQuote h1 {
+    font-size: 40px;
+  }
+
+  .aboutSectionOne {
+    text-align: center;
+  }
+  .aboutSectionOneContent {
+    margin-top: 1rem;
+  }
+  .footer-padding {
+    padding: 0;
+  }
 }
