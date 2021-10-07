@@ -1,29 +1,85 @@
-@media (max-width: 500px) {
-  .about_section2-bg h3 {
-    font-size: 2rem;
+@media (min-width: 767px) and (max-width: 1024px) {
+  .hero-bg {
+    overflow-x: hidden;
+  }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+  :root {
+    --heading-second-size: 35px;
+  }
+  .hero-bg {
+    overflow-x: hidden;
+  }
+  .faq_section2-title {
+    font-size: 30px;
+  }
+  .banner_container {
+    margin-top: 8rem;
+  }
+  .faq_section2-title {
+    font-size: 25px;
+    line-height: 2rem;
+  }
+  .hero-heading h1 {
+    font-size: 35px;
+    line-height: 3rem;
+  }
+  .hero-heading p {
+    font-size: 14px;
+  }
+  .car-one {
+    width: 18rem;
+  }
+  /*Faq*/
+  :root {
+    --heading-second-size: 30px;
+  }
+  .faq_section1-title {
+    line-height: 2.5rem;
+  }
+  .accordion-button {
+    padding: 1.1rem 1rem;
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 500px) {
-  .aboutSectionOne {
-    text-align: center;
+@media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .hero-bg {
+    overflow-x: hidden;
   }
-  .aboutSectionOneContent {
-    margin-top: 1rem;
-  }
-  .footer-padding {
-    padding: 0;
-  }
-}
-
-@media screen and (min-device-width: 320px) and (max-device-width: 768px) {
   .cardSection .card {
     margin: 0.8rem 0;
+  }
+  .banner_container {
+    margin-top: 8rem;
+  }
+  .hero-heading h1 {
+    font-size: 35px;
+    line-height: 3rem;
+  }
+  .hero-heading p {
+    font-size: 14px;
+  }
+  .car-one {
+    width: 15rem;
   }
   .FreeQuote {
     padding: 1rem 0.5rem;
   }
   .FreeQuote h1 {
     font-size: 40px;
+  }
+  /*Faq*/
+  :root {
+    --heading-second-size: 30px;
+  }
+  .faq_section1-title {
+    line-height: 2.5rem;
+  }
+  .accordion-button {
+    padding: 1.1rem 1rem;
+  }
+  .faq_section2-title {
+    font-size: 25px;
+    line-height: 2rem;
   }
 }
