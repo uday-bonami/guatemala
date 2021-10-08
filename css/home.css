@@ -112,26 +112,26 @@
 
   color: #353535;
 }
-.stars i{
-  color: #FEB546;
+.stars i {
+  color: #feb546;
 }
-.go-icon{
-  background: #1F4056;
+.go-icon {
+  background: #1f4056;
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
-.go-icon i{
+.go-icon i {
   line-height: 41px;
   color: #fff;
 }
 /* about */
-.bg-about{
-  background: url('../img/about-bg.png');
+.bg-about {
+  background: url("../img/about-bg.png");
   background-size: 100% 100%;
 }
 /* service */
-.bg-service{
-  background: url('../img/service-bg.png') ;
+.bg-service {
+  background: url("../img/service-bg.png");
   background-size: 100% 100%;
 }

@@ -30,6 +30,11 @@
   .car-one {
     width: 18rem;
   }
+
+  .footer-padding {
+    padding: 0;
+  }
+
   /*Faq*/
   :root {
     --heading-second-size: 30px;
@@ -115,5 +120,11 @@
   }
   .footer-padding {
     padding: 0;
+  }
+}
+
+@media (max-width: 550px) {
+  .aboutSectionOneContent {
+    text-align: center;
   }
 }
