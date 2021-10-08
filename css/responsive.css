@@ -83,6 +83,10 @@
   .hero-content .main-btn {
     margin-top: 2rem;
   }
+  /*Slider*/
+  .slick-arrow{
+    margin-right: 3rem;
+  }
 }
 
 @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
@@ -159,6 +163,11 @@
   .centerClass {
     text-align: center;
   }
+    /*Slider*/
+    .slick-arrow{
+      margin-top: 15px;
+      margin-right: 3rem;
+    }
 }
 
 @media (max-width: 550px) {

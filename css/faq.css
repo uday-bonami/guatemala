@@ -55,6 +55,10 @@
     background-color:#1F4056;
     padding: 12px 17px;
     font-size: .850rem;
+    transition: 0.3s;
+}
+.submit_btn:hover{
+    background-color:#224761;
 }
 .faq_section2-title{
     font-size: 45px;
@@ -78,4 +82,12 @@
     padding: 12px 1.8rem;
     background-color: #1F4056;
     font-size: .950rem;
+    border: 3px solid #1F4056;
+    transition: 0.2s;
+}
+.faq_section3-btn:hover{
+    font-weight: 600 !important;
+    color: #1F4056 !important;
+    background: transparent;
+    border: 2.9px solid #1F4056;
 }

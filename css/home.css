@@ -120,9 +120,18 @@
   width: 35px;
   height: 35px;
   border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
 }
 .go-icon i {
   color: #fff;
+  transition: 0.3s;
+}
+.go-icon:hover i{
+  transform: translateX(2px);
+}
+.go-icon:hover{
+  background: #25506d;
 }
 .service_para {
   width: 90%;

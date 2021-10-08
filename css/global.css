@@ -85,6 +85,14 @@ a {
   padding: 10px 40px;
   border-radius: 5px;
   color: #fff;
+  border: 3px solid #1f4056;
+  transition: 0.4s;
+}
+.main-btn:hover{
+  font-weight: 600;
+  background-color: transparent;
+  border: 2.9px solid #1f4056;
+  color: #1f4056;
 }
 /* heading */
 .global-heading-1 h1 {
@@ -98,44 +106,16 @@ a {
   border-radius: 35px;
   /* padding: 20px; */
 }
-/*  */
-.f-social ul li a {
-  padding-left: 10px;
-}
-.f-social ul li a i {
-  font-size: 21px;
-  border: 1px solid;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  line-height: 38px;
-  text-align: center;
-}
-.f-social ul li a i.yt {
-  color: #ff0000;
-}
-.f-social ul li a i.fb {
-  color: #4267b2;
-}
-.f-social ul li a i.ig {
-  color: #bc2a8d;
-}
-.f-social ul li a i.tw {
-  color: #1da1f2;
-}
-.f-social ul li a i.li {
-  color: #0077b5;
-}
-
-/* button */
-.submitButtonSend {
-  border: none;
-  padding: 1rem 1.5rem;
-  background: #daffff;
-  border-radius: 10px;
-  margin-top: 1rem;
-}
-
 .footerMarginClass {
   margin-top: -20px;
+}
+/*Hover*/
+.arrow_hover{
+  transition: 0.2s;
+}
+.home_readMore:hover .arrow_hover{
+   transform: translateX(2px);
+}
+.about_link2:hover{
+  color: #7abab5;
 }

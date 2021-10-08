@@ -76,3 +76,51 @@
 .footer-contact ul li:first-child {
   margin-top: none;
 }
+/*Footer Icons*/
+.f-social ul li a {
+  padding-left: 10px;
+}
+.f-social ul li a i {
+  font-size: 21px;
+  border: 1px solid;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 38px;
+  text-align: center;
+  transition: 0.3s;
+}
+.f-social ul li a i.yt {
+  color: #ff0000;
+}
+.f-social ul li a i.fb {
+  color: #4267b2;
+}
+.f-social ul li a i.ig {
+  color: #bc2a8d;
+}
+.f-social ul li a i.tw {
+  color: #1da1f2;
+}
+.f-social ul li a i.li {
+  color: #0077b5;
+}
+/*hover*/
+.f-social ul li a i.yt:hover {
+  background-color: #ff0000;
+}
+.f-social ul li a i.fb:hover {
+  background-color: #4267b2;
+}
+.f-social ul li a i.ig:hover {
+  background-color: #bc2a8d;
+}
+.f-social ul li a i.tw:hover {
+  background-color: #1da1f2;
+}
+.f-social ul li a i.li:hover {
+  background-color: #0077b5;
+}
+.f-social ul li a i:hover{
+  color: white;
+}

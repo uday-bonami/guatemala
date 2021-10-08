@@ -66,4 +66,30 @@
 .foreDiv textarea::placeholder {
   color: #efefef;
 }
+/* button */
+.submitButtonSend {
+  border: none;
+  padding: 1rem 1.5rem;
+  background: #daffff;
+  border-radius: 10px;
+  margin-top: 1rem;
+  transition: 0.3s;
+}
+.submitButtonSend:hover{
+  background: #caffff;
+}
+
 /* free quote */
+/*Section2_card Link*/
+.section2_card-link{
+  font-size: 1.1rem;
+  font-weight: var(--bold-second);
+  color: var(--common-color);
+}
+.section2_card-link:hover{
+  color: var(--common-color);
+}
+.card-title{
+  font-weight: var(--bold-first);
+  color: black;
+}

@@ -43,8 +43,12 @@
 }
 /*About Section1*/
 .about_btn {
-  background-color: var(--common-color) !important;
+  background-color: var(--common-color);
   padding: 10px 0;
+  transition: 0.3s;
+}
+.about_btn:hover{
+  box-shadow: 1px 1px 15px rgba(31,34,86,0.4);
 }
 
 @media (max-width: 1400px) {
@@ -80,10 +84,7 @@
   border-radius: 5rem;
 }
 .about_progress-per {
-  width: 95px;
-  height: 7px;
   background-color: #2ad695;
-  border-radius: 5rem;
 }
 /*About Section3*/
 .about_section3_bg {
