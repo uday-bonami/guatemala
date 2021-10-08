@@ -117,12 +117,11 @@
 }
 .go-icon{
   background: #1F4056;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
 }
 .go-icon i{
-  line-height: 41px;
   color: #fff;
 }
 /* about */
@@ -131,6 +130,10 @@
   background-size: 100% 100%;
 }
 /* service */
+.service_para{
+   width: 92%;
+}
+
 .bg-service{
   background: url('../img/service-bg.png') ;
   background-size: 100% 100%;
