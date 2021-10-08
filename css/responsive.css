@@ -1,11 +1,19 @@
-@media (min-width: 1024px) and (max-width: 1400px) {
-}
-@media (min-width: 767px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .hero-bg {
     overflow-x: hidden;
   }
+  .navbar-collapse ul li a::after {
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+  .footer i {
+    margin: 0.2rem 0;
+  }
+  .hero-content .main-btn {
+    margin-top: 0.5rem;
+  }
 }
-@media (min-width: 480px) and (max-width: 767px) {
+@media (min-width: 480px) and (max-width: 768px) {
   :root {
     --heading-second-size: 35px;
   }
@@ -60,6 +68,21 @@
 
   .about_section2-bg h3 {
     font-size: 2rem;
+  }
+
+  .navbar-collapse ul li a::after {
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+  .footer i {
+    margin: 0.2rem 0;
+  }
+  .centerClass {
+    text-align: center;
+  }
+
+  .hero-content .main-btn {
+    margin-top: 2rem;
   }
 }
 
@@ -122,6 +145,21 @@
   }
   .footer-padding {
     padding: 0;
+  }
+
+  .navbar-collapse ul li a::after {
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+  .footer i {
+    margin: 0.2rem 0;
+  }
+
+  .global-heading-1 h1 {
+    font-size: 45px;
+  }
+  .centerClass {
+    text-align: center;
   }
 }
 

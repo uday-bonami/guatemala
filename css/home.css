@@ -124,7 +124,7 @@
 .go-icon i {
   color: #fff;
 }
-.service_para{
+.service_para {
   width: 90%;
 }
 /* about */
@@ -135,5 +135,7 @@
 /* service */
 .bg-service {
   background: url("../img/service-bg.png");
-  background-size: 100% 100%;
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
