@@ -1,4 +1,53 @@
-.CaseOverDivContentFirst p {
-  color: #8a8a8a;
+:root {
+  --mainColor: #fff;
+  --smoothGray: #8a8a8a;
+  --DarkBlack: #1f4056;
+}
+.CaseOverDivContent p {
+  color: var(--smoothGray);
   font-size: 16px;
+  line-height: 30px;
+}
+.HowCanWeHelpDiv {
+  background-image: url(../img/Group\ 1000001674.png);
+  background-position: center;
+  background-size: cover;
+}
+.HowCanWeHelpDiv h1 {
+  color: var(--mainColor);
+  font-size: 45px;
+  line-height: 67px;
+}
+.HowCanWeHelpDiv p {
+  color: var(--mainColor);
+  font-size: 16px;
+  line-height: 30px;
+  margin: 1rem 0;
+}
+.CompanyNews {
+  border-bottom: 1px solid #1f4056;
+}
+.CompanyNews h2 {
+  font-weight: 500;
+  font-size: 30px;
+  color: var(--DarkBlack);
+}
+.CompanyNewsContent h3 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 30px;
+}
+.BrochurCard {
+  background: #f5f5f5;
+}
+.BrochurCard h2 {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 30px;
+}
+.downloadPdf {
+  border: none;
+  padding: 1rem 2.6rem;
+  background-color: var(--mainColor);
 }
