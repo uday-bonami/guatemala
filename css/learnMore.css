@@ -51,3 +51,7 @@
   padding: 1rem 2.6rem;
   background-color: var(--mainColor);
 }
+.dark {
+  background-color: #1f4056;
+  color: var(--mainColor);
+}
