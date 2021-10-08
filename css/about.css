@@ -37,8 +37,9 @@
 .about_section-title {
   font-weight: var(--bold-second);
   font-size: var(--heading-second-size);
-  line-height: var(--line-height-first);
+  /* line-height: var(--line-height-first); */
   color: var(--common-color);
+  margin-top: 1rem;
 }
 /*About Section1*/
 .about_btn {
