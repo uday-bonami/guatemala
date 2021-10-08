@@ -156,13 +156,15 @@
    background-color: var(--common-color) !important;
    font-size: 0;
     line-height: 0;
-    position: absolute;
-    top: 0 !important;
+   position: absolute;
+    top: -2.6rem !important;
 }
 .slick-prev{
   background-color: var(--common-color) !important;
-  top: 0 !important;
-  left: 67rem !important;
+  top: -2.6rem !important;
+  left: unset !important;
+  right: 1.5rem;
+  padding-right: 1rem;
 }
 .slick-next:before {
   color: #1F4056 !important;
@@ -171,6 +173,7 @@
   color: #1F4056 !important;
 }
 .slick-next:before {
+  color: #1F4056 !important;
   font-family: 'slick';
   line-height: 1;
   opacity: .75;
