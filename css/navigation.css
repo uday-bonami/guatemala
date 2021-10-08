@@ -20,6 +20,6 @@
   margin-left: 8px;
 }
 
-.navbar-collapse ul li:hover a::after {
+.navbar-collapse ul li:hover a::after, .navbar-collapse ul li a.active::after {
   display: block;
 }
