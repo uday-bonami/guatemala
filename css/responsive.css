@@ -84,7 +84,7 @@
     margin-top: 2rem;
   }
   /*Slider*/
-  .slick-arrow{
+  .slick-arrow {
     margin-right: 3rem;
   }
 }
@@ -163,11 +163,15 @@
   .centerClass {
     text-align: center;
   }
-    /*Slider*/
-    .slick-arrow{
-      margin-top: 15px;
-      margin-right: 3rem;
-    }
+  /*Slider*/
+  .slick-arrow {
+    margin-top: 15px;
+    margin-right: 3rem;
+  }
+
+  .sectionPading_extra {
+    padding: 0;
+  }
 }
 
 @media (max-width: 550px) {
