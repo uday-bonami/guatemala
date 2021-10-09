@@ -50,6 +50,14 @@
   border: none;
   padding: 1rem 2.6rem;
   background-color: var(--mainColor);
+  border: 2px solid var(--common-color);
+  transition: 0.2s;
+}
+.downloadPdf:hover{
+  font-weight: var(--bold-first);
+  background: transparent;
+  color: var(--common-color);
+  border: 2px solid var(--common-color);
 }
 .dark {
   background-color: #1f4056;

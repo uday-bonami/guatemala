@@ -117,6 +117,9 @@
   font-size: 0.9rem;
   font-weight: var(--bold-first);
 }
+.card_link:hover{
+  color: var(--common-color);
+}
 .card_link::after {
   content: "";
   display: block;

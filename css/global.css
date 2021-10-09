@@ -119,3 +119,7 @@ a {
 .about_link2:hover{
   color: #7abab5;
 }
+.cursor{
+  cursor: pointer;
+}
+
