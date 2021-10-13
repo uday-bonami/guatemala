@@ -1,13 +1,13 @@
 .navbar-collapse ul {
-  border-bottom: 1px solid #fff !important;
+  border-bottom: 1px solid rgb(206, 206, 206) !important;
 }
 .navbar-collapse ul li {
-  padding: 0 15px;
+  padding: 0 20px;
   font-size: 15px;
   color: #fff;
 }
 .navbar-collapse ul li a {
-  color: #fff !important;
+  color: rgb(63, 63, 63) !important;
   font-weight: 100;
 }
 .navbar-collapse ul li a::after {
@@ -20,6 +20,7 @@
   margin-left: 8px;
 }
 
-.navbar-collapse ul li:hover a::after, .navbar-collapse ul li a.active::after {
+.navbar-collapse ul li:hover a::after,
+.navbar-collapse ul li a.active::after {
   display: block;
 }
