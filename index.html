@@ -15,6 +15,7 @@
   <link href="css/home.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/about.css" />
   <link rel="stylesheet" href="css/faq.css">
+  <!-- <link rel="stylesheet" href="css/Contact.css"> -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
   <link href="css/responsive.css" rel="stylesheet">
   <!--Slick-->
@@ -27,21 +28,18 @@
 <body>
   <!-- navgation  -->
   <header class="position-absolute w-100 mt-4">
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container px-5 py-2" style="
-            background-image: url('img/header-img.png');
-            background-repeat: no-repeat;
-            background-size: cover;
-          ">
-        <a class="navbar-brand" href="index.html">
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <div class="container px-5 py-2 NavbarDiv">
+        <!-- <a class="navbar-brand" href="index.html">
           <img src="img/logo.png" />
-        </a>
+        </a> -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse ms-auto" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 py-2">
+        <div class="collapse navbar-collapse ms-auto text-center justify-content-center bg-dark-small"
+          id="navbarSupportedContent">
+          <ul class="navbar-nav  mb-2 mb-lg-0 py-2">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
             </li>
@@ -54,9 +52,9 @@
             <li class="nav-item">
               <a class="nav-link" href="./faq.html">FAQ</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="./Contact.html">Contact</a>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>
@@ -69,11 +67,14 @@
         <div class="col-12 banner_container">
           <div class="hero-content">
             <div class="hero-heading">
+              <div class="main-logo text-center">
+                <img src="./img/big-logo.png" class="img-fluid py-2">
+              </div>
               <h1 class="text-center">Shuttle & Private Transport</h1>
-              <p class="mt-2 mt-lg-4">
+              <!-- <p class="mt-2 mt-lg-4">
                 Lorem Ipsum is simply dummy text of the printing and
                 typesetting industry.
-              </p>
+              </p> -->
               <div class="row  gx-0">
                 <div class=" col-12 bg-white booking-form p-3 mt-3">
                   <form class="row">
@@ -132,8 +133,8 @@
         <div class="row ">
           <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-4 mt-md-0 col-xxl-3 gx-5">
             <div class="free-beer row align-items-center py-sm-5 py-md-3 ">
-              <div class="col-4 col-lg-12 order-1 order-md-0">
-                <img src="img/reduce-cost 2.png" class="img-fluid" />
+              <div class="col-4 col-lg-12 order-1 order-md-0 cardDiv">
+                <img src="img/1.png" class="img-fluid" />
               </div>
               <div class="beer-content mt-3 col-8 col-sm-8 col-md-12 ">
                 <h5>The Cheapest!</h5>
@@ -141,14 +142,15 @@
                   Lorem Ipsum is simply dummy text of printing and typesetting
                   industry.
                 </p>
-                <a href="" class="home_readMore"> Read more <i class="fas fa-arrow-right arrow_hover"></i> </a>
+                <a href="./LearnMore.html" class="home_readMore"> Read more <i
+                    class="fas fa-arrow-right arrow_hover"></i> </a>
               </div>
             </div>
           </div>
           <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-4 mt-md-0 col-xxl-3 gx-5">
             <div class="free-beer py-sm-5 py-md-3 row align-items-center">
-              <div class="col-4 col-lg-12 order-1 order-md-0">
-                <img src="img/beer 2.png" class="img-fluid" />
+              <div class="col-4 col-lg-12 order-1 order-md-0 cardDiv">
+                <img src="img/2.png" class="img-fluid" />
 
               </div>
               <div class="beer-content mt-3 col-8 col-sm-8 col-md-12 ">
@@ -157,14 +159,15 @@
                   Lorem Ipsum is simply dummy text of printing and typesetting
                   industry.
                 </p>
-                <a href="" class="home_readMore"> Read more <i class="fas fa-arrow-right arrow_hover"></i> </a>
+                <a href="./LearnMore.html" class="home_readMore"> Read more <i
+                    class="fas fa-arrow-right arrow_hover"></i> </a>
               </div>
             </div>
           </div>
           <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-4 mt-xxl-0 col-xxl-3 gx-5">
             <div class="free-beer row align-items-center py-sm-5 py-md-3">
-              <div class="col-4 col-lg-12 order-1 order-md-0">
-                <img src="img/speaker 1.png" class="img-fluid" />
+              <div class="col-4 col-lg-12 order-1 order-md-0 cardDiv">
+                <img src="img/3.png" class="img-fluid" />
               </div>
               <div class="beer-content mt-3 col-8 col-sm-8 col-md-12 ">
                 <h5>Loyalty Program</h5>
@@ -172,14 +175,15 @@
                   Lorem Ipsum is simply dummy text of printing and typesetting
                   industry.
                 </p>
-                <a href="" class="home_readMore"> Read more <i class="fas fa-arrow-right arrow_hover"></i> </a>
+                <a href="./LearnMore.html" class="home_readMore"> Read more <i
+                    class="fas fa-arrow-right arrow_hover"></i> </a>
               </div>
             </div>
           </div>
           <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-4 mt-xxl-0 col-xxl-3 gx-5">
             <div class="free-beer row align-items-center py-sm-5 py-md-3">
-              <div class="col-4 col-lg-12 order-1 order-md-0">
-                <img src="img/schedule 1.png" class="img-fluid" />
+              <div class="col-4 col-lg-12 order-1 order-md-0 cardDiv">
+                <img src="img/4.png" class="img-fluid" />
               </div>
               <div class="beer-content mt-3 col-8 col-sm-8 col-md-12">
                 <h5>Plan Your Holiday</h5>
@@ -187,7 +191,8 @@
                   Lorem Ipsum is simply dummy text of printing and typesetting
                   industry.
                 </p>
-                <a href="" class="home_readMore"> Read more <i class="fas fa-arrow-right arrow_hover"></i> </a>
+                <a href="./LearnMore.html" class="home_readMore"> Read more <i
+                    class="fas fa-arrow-right arrow_hover"></i> </a>
               </div>
             </div>
           </div>
@@ -204,12 +209,12 @@
           </div>
         </div>
         <div class="row pt-5 responsive2">
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-4 col-xl-">
             <div class="explore-img">
               <img src="img/Rectangle 757.png" class="w-100 img-fluid" />
             </div>
             <div class="explore-card mx-4">
-              <p class="mb-0">Lorem lpsum</p>
+              <p class="mb-0 ">Lorem lpsum</p>
               <h4>Enjoy the Beauty of the Floating City</h4>
               <div class="stars-main d-flex align-items-center">
                 <div class="stars">
@@ -225,6 +230,29 @@
               </div>
             </div>
           </div>
+
+          <div class="col-12 col-md-6 col-lg-4 col-xl-">
+            <div class="explore-img">
+              <img src="img/Rectangle 759.png" class="w-100 img-fluid" />
+            </div>
+            <div class="explore-card mx-4">
+              <p class="mb-0 ">Lorem lpsum</p>
+              <h4>Enjoy the Beauty of the Floating City</h4>
+              <div class="stars-main d-flex align-items-center">
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="go-icon ms-auto d-flex align-items-center justify-content-center">
+                  <a href=""><i class="fas fa-arrow-right d-flex justify-content-center"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="col-12 col-md-6 mt-1 mt-md-0 col-lg-4">
             <div class="explore-img">
               <img src="img/Rectangle 758.png" class="w-100 img-fluid" />
@@ -329,18 +357,18 @@
     </section>
     <!-- service -->
     <section class="pt-5 pb-3 section-padding bg-service">
-      <div class="container bg-white service-container">
+      <div class="container bg-white service-container px-5 py-3">
         <div class="row">
           <div class="global-heading-1">
-            <h1 class="text-center">Services</h1>
+            <h1 class="text-center mt-4">Services</h1>
           </div>
         </div>
         <div class="row pt-5">
           <div class="col-12 col-lg-6 col-xl-4 gx-5 mb-5">
-            <div class="explore-img">
-              <img src="img/service-1.png" class="w-100 img-fluid" />
+            <div class="explore-img justify-content-center d-flex">
+              <img src="img/service-1.png" class="img-fluid" />
             </div>
-            <div class="explore-card mx-3">
+            <div class="explore-card mx-4">
               <h4>Shuttles</h4>
               <div class="d-flex">
                 <p class="mb-0 service_para" style="line-height: 26px">
@@ -355,10 +383,10 @@
             </div>
           </div>
           <div class="col-12 col-lg-6 col-xl-4 gx-5 mb-5">
-            <div class="explore-img">
-              <img src="img/service-2.png" class="w-100 img-fluid" />
+            <div class="explore-img justify-content-center d-flex">
+              <img src="img/service-2.png" class="img-fluid" />
             </div>
-            <div class="explore-card mx-3">
+            <div class="explore-card mx-4">
               <h4>Private Transportation</h4>
               <div class="d-flex">
                 <p class="mb-0 service_para" style="line-height: 26px">
@@ -373,10 +401,10 @@
             </div>
           </div>
           <div class="col-12 col-lg-6 col-xl-4 gx-5 mb-5">
-            <div class="explore-img">
-              <img src="img/service-3.png" class="w-100 img-fluid" />
+            <div class="explore-img justify-content-center d-flex">
+              <img src="img/service-3.png" class="img-fluid" />
             </div>
-            <div class="explore-card mx-3">
+            <div class="explore-card mx-4">
               <h4>International Shuttles</h4>
               <div class="d-flex">
                 <p class="mb-0 service_para" style="line-height: 26px">
@@ -398,19 +426,29 @@
   <footer class="footer footer_padding_one">
     <div class="container footer-padding">
       <div class="row gx-0">
-        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xxl-6">
-          <h2 class="mb-4 ms-3 mt-2">
-            About Us
+        <div class=" col-12 col-sm-12 col-md-4 col-lg-4 col-xxl-4">
+          <h2 class="mb-4 ms-3 mt-3">
+            Quick Links
           </h2>
-          <p class="me-5 ms-3">
-            Lorem Ipsum is simply dummy text of the printing and typesetting, Lorem Ipsum is simply dummy
-            text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-            dummy text ever since the 1500s, Lorem Ipsum is simply dummy text of the printing and
-            typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
-            1500s,
-          </p>
+          <div class="footer-contact ms-3">
+            <ul>
+              <li>
+                <a href="./index.html">Home</a>
+              </li>
+              <li>
+                <a href="./about.html">About Us</a>
+              </li>
+              <li>
+                <a href="./LearnMore.html">Learn More</a>
+              </li>
+              <li>
+                <a href="./faq.html">FAQ</a>
+              </li>
+
+            </ul>
+          </div>
         </div>
-        <div class=" col-12 col-sm-12 col-md-6 col-lg-3 col-xxl-3">
+        <div class=" col-12 col-sm-12 col-md-4 col-lg-4 col-xxl-4">
           <h2 class="mb-4 ms-3 mt-3">
             Contact
           </h2>
@@ -428,7 +466,7 @@
             </ul>
           </div>
         </div>
-        <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xxl-3">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xxl-4">
           <h2 class="mb-4 ms-3 mt-3">
             Social Media
           </h2>
@@ -467,8 +505,8 @@
       dots: false,
       infinite: true,
       speed: 300,
-      slidesToShow: 3,
-      slidesToScroll: 2,
+      slidesToShow: 4,
+      slidesToScroll: 1,
       arrows: true,
       responsive: [
         {

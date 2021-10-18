@@ -3,6 +3,14 @@
   --smoothGray: #8a8a8a;
   --DarkBlack: #1f4056;
 }
+.CaseOverDivContent {
+  border-bottom: 1px solid var(--smoothGray);
+  text-align: justify;
+}
+.CaseOverDivContent h1 {
+  font-size: 40px;
+  font-weight: 500;
+}
 .CaseOverDivContent p {
   color: var(--smoothGray);
   font-size: 16px;
@@ -53,7 +61,7 @@
   border: 2px solid var(--common-color);
   transition: 0.2s;
 }
-.downloadPdf:hover{
+.downloadPdf:hover {
   font-weight: var(--bold-first);
   background: transparent;
   color: var(--common-color);

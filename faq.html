@@ -23,22 +23,19 @@
 <body>
     <!-- navgation  -->
     <header class="position-absolute w-100 mt-4">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container px-5 py-2" style="
-          background-image: url('img/header-img.png');
-          background-repeat: no-repeat;
-          background-size: cover;
-        ">
-                <a class="navbar-brand" href="index.html">
-                    <img src="img/logo.png" />
-                </a>
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <div class="container px-5 py-2 NavbarDiv">
+                <!-- <a class="navbar-brand" href="index.html">
+              <img src="img/logo.png" />
+            </a> -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse ms-auto" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 py-2">
+                <div class="collapse navbar-collapse ms-auto text-center justify-content-center bg-dark-small"
+                    id="navbarSupportedContent">
+                    <ul class="navbar-nav  mb-2 mb-lg-0 py-2">
                         <li class="nav-item">
                             <a class="nav-link " aria-current="page" href="./index.html">Home</a>
                         </li>
@@ -46,14 +43,14 @@
                             <a class="nav-link" href="./about.html">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./LearnMore.html">Learn more</a>
+                            <a class="nav-link " href="./LearnMore.html">Learn more</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="./faq.html">FAQ</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./Contact.html">Contact</a>
-                        </li>
+                        <!-- <li class="nav-item">
+                  <a class="nav-link" href="./Contact.html">Contact</a>
+                </li> -->
                     </ul>
                 </div>
             </div>
@@ -62,6 +59,7 @@
     <!--Faq Hero-->
     <section class="about_bg">
         <div class="about_hero text-center">
+            <img src="./img/big-logo.png" class="img-fluid py-2">
             <h1>FAQ</h1>
             <div>
                 <a href="#" class="about_link1 text-dark">Home</a>
@@ -353,19 +351,29 @@
     <footer class="footer footer_padding_one">
         <div class="container footer-padding">
             <div class="row gx-0">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xxl-6">
+                <div class=" col-12 col-sm-12 col-md-4 col-lg-4 col-xxl-4">
                     <h2 class="mb-4 ms-3 mt-3">
-                        About Us
+                        Quick Links
                     </h2>
-                    <p class="me-5 ms-3">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting, Lorem Ipsum is simply dummy
-                        text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-                        dummy text ever since the 1500s, Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
-                        1500s,
-                    </p>
+                    <div class="footer-contact ms-3">
+                        <ul>
+                            <li>
+                                <a href="./index.html">Home</a>
+                            </li>
+                            <li>
+                                <a href="./about.html">About Us</a>
+                            </li>
+                            <li>
+                                <a href="./LearnMore.html">Learn More</a>
+                            </li>
+                            <li>
+                                <a href="./faq.html">FAQ</a>
+                            </li>
+
+                        </ul>
+                    </div>
                 </div>
-                <div class=" col-12 col-sm-12 col-md-6 col-lg-3 col-xxl-3">
+                <div class=" col-12 col-sm-12 col-md-4 col-lg-4 col-xxl-4">
                     <h2 class="mb-4 ms-3 mt-3">
                         Contact
                     </h2>
@@ -384,7 +392,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xxl-3">
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xxl-4">
                     <h2 class="mb-4 ms-3 mt-3">
                         Social Media
                     </h2>

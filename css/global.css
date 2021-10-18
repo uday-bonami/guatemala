@@ -88,7 +88,7 @@ a {
   border: 3px solid #1f4056;
   transition: 0.4s;
 }
-.main-btn:hover{
+.main-btn:hover {
   font-weight: 600;
   background-color: transparent;
   border: 2.9px solid #1f4056;
@@ -110,16 +110,21 @@ a {
   margin-top: -20px;
 }
 /*Hover*/
-.arrow_hover{
+.arrow_hover {
   transition: 0.2s;
 }
-.home_readMore:hover .arrow_hover{
-   transform: translateX(2px);
+.home_readMore:hover .arrow_hover {
+  transform: translateX(2px);
 }
-.about_link2:hover{
+.about_link2:hover {
   color: #7abab5;
 }
-.cursor{
+.cursor {
   cursor: pointer;
 }
 
+@media (max-width: 1000px) {
+  .bg-dark-small {
+    background-color: #ffffff;
+  }
+}
