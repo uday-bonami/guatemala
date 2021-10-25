@@ -1,11 +1,13 @@
 :root {
   --mainColor: #fff;
-  --smoothGray: #8a8a8a;
+  --smoothGray: #9b9999;
   --DarkBlack: #1f4056;
 }
 .CaseOverDivContent {
-  border-bottom: 1px solid var(--smoothGray);
   text-align: justify;
+}
+.borderClass {
+  border-bottom: 1px solid var(--smoothGray);
 }
 .CaseOverDivContent h1 {
   font-size: 40px;
