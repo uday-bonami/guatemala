@@ -73,3 +73,7 @@
   background-color: #1f4056;
   color: var(--mainColor);
 }
+
+.CaseOverDivContent {
+  text-align: start ;
+}
