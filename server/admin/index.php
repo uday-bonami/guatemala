@@ -3,6 +3,11 @@ function getHeader()
 {
     require "./adminHeader.php";
 }
+
+function getFooter()
+{
+    require "./adminFooter.php";
+}
 ?>
 
 <?php getHeader(); ?>
@@ -38,47 +43,20 @@ function getHeader()
     </section>
     <section class="statics">
         <h2 style="font-weight: bold;">Analytics Overview</h2>
+        <div class="cards">
+            <div class="card statics-card card-activate" style="background-color: #8CF0F0">
+                <h4 class="statics statics-card">120k</h4>
+                <span>Requests per day</span>
+            </div>
+            <div class="card statics-card">
+                <h4 class="statics ">129k</h4>
+                <span>New Users Register</span>
+            </div>
+            <div class="card statics-card">
+                <h4 class="statics">140k</h4>
+                <span>Booking Registers</span>
+            </div>
+        </div>
     </section>
 </main>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script src="js/global.js"></script>
-<script>
-    $('.responsive2').slick({
-        dots: false,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        arrows: true,
-        responsive: [{
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    infinite: true,
-                    dots: false,
-                    nav: true,
-                }
-            },
-            {
-                breakpoint: 800,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
-    });
-</script>
-</body>
-
-</html>
+<?php getFooter(); ?>

@@ -58,3 +58,53 @@ img.card-img-top {
   height: 60%;
   width: 100%;
 }
+
+div.statics-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: none;
+  border: none;
+  background-color: #d4ffff;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+div.statics-card:hover {
+  cursor: pointer;
+}
+
+section.statics {
+  margin-top: 20px;
+}
+
+div.statics-card > span {
+  color: #3a3838a2;
+}
+
+div.statics-card > span.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 600ms linear;
+  background-color: #8cf0f0;
+}
+
+div.card-activate {
+  box-shadow: 0px 4px 17px 2px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+    display: none;
+  }
+}
