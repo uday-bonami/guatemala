@@ -12,37 +12,7 @@ function getFooter()
 
 <?php getHeader(); ?>
 <main>
-    <section class="admin-upgrades">
-        <h1 style="font-weight: bold;">Hi, Admin</h1>
-        <div class="cards">
-            <div class="card">
-                <img src="/admin/static/img/about.svg" class="card-img-top" alt="about">
-                <div class="card-body">
-                    <h5 class="card-title" style="font-weight: bold">About Page</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" style="border-radius: 100px;padding: 5px 25px;border: none; background-color: #2F2E41;" class="btn btn-primary">Update</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="/admin/static/img/faq.svg" class="card-img-top" alt="about">
-                <div class="card-body">
-                    <h5 class="card-title" style="font-weight: bold">FAQ Page</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" style="border-radius: 100px;padding: 5px 25px;border: none; background-color: #2F2E41;" class="btn btn-primary">Update</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="/admin/static/img/blog.svg" class="card-img-top" alt="about">
-                <div class="card-body">
-                    <h5 class="card-title" style="font-weight: bold">Blog Page</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" style="border-radius: 100px;padding: 5px 25px;border: none; background-color: #2F2E41;" class="btn btn-primary">Update</a>
-                </div>
-            </div>
-        </div>
-    </section>
     <section class="statics">
-        <h2 style="font-weight: bold;">Analytics Overview</h2>
         <div class="cards">
             <div class="card statics-card card-activate" style="background-color: #8CF0F0">
                 <h4 class="statics statics-card">120k</h4>
@@ -57,6 +27,58 @@ function getFooter()
                 <span>Booking Registers</span>
             </div>
         </div>
+        <section class="graph">
+            <div class="graph-container">
+                <div class="card" style="width:87%;margin-top: 20px;height: 471px;padding: 15px;box-shadow: 0px 4px 19px 4px rgba(0, 0, 0, 0.25);">
+                    <h5 class="card-title">Site traffic</h5>
+                    <canvas id="graph" style="height: 100%"></canvas>
+                </div>
+            </div>
+        </section>
+    </section>
+    <section class="users-bookings">
+        <section id="join-users">
+            <div class="card user-section" style="width: 100%;height: 678px">
+                <div class="c-header">
+                    <h4 class="card-title">Recently Joined Users</h4>
+                </div>
+                <div class="list-container">
+                    <div class="list">
+                        <div class="avatar-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="rgb(236, 236, 236)" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                            </svg>
+                        </div>
+                        <div class="details">
+                            <h5>Users Name</h5>
+                            <span class="subtitle">username@mail.com</span>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="avatar-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="rgb(236, 236, 236)" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                            </svg>
+                        </div>
+                        <div class="details">
+                            <h5>Users Name</h5>
+                            <span class="subtitle">username@mail.com</span>
+                        </div>
+                    </div>
+                    <div class="list"></div>
+                    <div class="list"></div>
+                    <div class="list"></div>
+                    <div class="list"></div>
+                </div>
+            </div>
+        </section>
+        <section id="recent-bookings">
+            <div class="card user-section" style="width: 100%;height: 678px">
+                <h4 class="card-title">Most Recent Bookings</h4>
+            </div>
+        </section>
     </section>
 </main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.1/chart.min.js"></script>
+<script src="/admin/static/js/chart.js"></script>
 <?php getFooter(); ?>
