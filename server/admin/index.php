@@ -74,7 +74,19 @@ function getFooter()
         </section>
         <section id="recent-bookings">
             <div class="card user-section" style="width: 100%;height: 678px">
-                <h4 class="card-title">Most Recent Bookings</h4>
+                <div class="c-header">
+                    <h4 class="card-title">Most Recent Bookings</h4>
+                </div>
+                <div class="table">
+                    <div class="c-column c-thead">
+                        <span class="thead-data">Date</span>
+                        <span class="thead-data">From</span>
+                        <span class="thead-data">Destination</span>
+                        <span class="thead-data">Return Date</span>
+                        <span class="thead-data">Passenger</span>
+                        <span class="thead-data">Status</span>
+                    </div>
+                </div>
             </div>
         </section>
     </section>

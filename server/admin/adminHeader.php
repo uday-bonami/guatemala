@@ -36,6 +36,7 @@
             <a href="#">Users</a>
             <a href="#">Bookings</a>
             <a href="#">Admins</a>
+            <a href="/pages.php">Pages</a>
         </div>
     </div>
     <div class="right-section">
