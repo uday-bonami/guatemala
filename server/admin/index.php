@@ -92,5 +92,5 @@ function getFooter()
     </section>
 </main>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.1/chart.min.js"></script>
-<script src="/admin/static/js/chart.js"></script>
+<script src="js/chart.js"></script>
 <?php getFooter(); ?>
