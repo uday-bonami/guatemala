@@ -15,7 +15,7 @@ function getFooter()
     <h1>Site Pages</h1>
     <div class="cards">
         <div class="card">
-            <img src="/admin/static/img/about.svg" class="card-img-top" alt="about">
+            <img src="/img/about.svg" class="card-img-top" alt="about">
             <div class="card-body">
                 <h5 class="card-title" style="font-weight: bold">About Page</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -23,7 +23,7 @@ function getFooter()
             </div>
         </div>
         <div class="card">
-            <img src="/admin/static/img/faq.svg" class="card-img-top" alt="about">
+            <img src="/img/faq.svg" class="card-img-top" alt="faq">
             <div class="card-body">
                 <h5 class="card-title" style="font-weight: bold">FAQ Page</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -31,7 +31,7 @@ function getFooter()
             </div>
         </div>
         <div class="card">
-            <img src="/admin/static/img/blog.svg" class="card-img-top" alt="about">
+            <img src="/img/blog.svg" class="card-img-top" alt="blog">
             <div class="card-body">
                 <h5 class="card-title" style="font-weight: bold">Blog Page</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>

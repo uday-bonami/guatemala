@@ -16,6 +16,11 @@
 </head>
 
 <body>
+    <noscript>
+        <strong>
+            We're sorry but you need to enable javascript to get this applicaiton to work.
+        </strong>
+    </noscript>
     <nav class="editor">
         <div class="left-nav-side nav-section">
             <h1 style="font-family:'Permanent Marker', cursive;margin:0px;padding:0px;">E</h1>
@@ -69,30 +74,37 @@
     <div id="editor-body">
         <div class="editor editor-body-left">
             <div id="editor-tools">
-                <div class="tool">
+                <button data="hello" class="tool" id="view">
                     <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 0 24 24" width="40px" fill="#FFFFFF">
                         <path d="M0 0h24v24H0z" fill="none" />
                         <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
                     </svg>
-                </div>
-                <div class="tool">
+                </button>
+                <button class="tool" id="add">
                     <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 0 24 24" width="40px" fill="#FFFFFF">
                         <path d="M0 0h24v24H0z" fill="none" />
                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
                     </svg>
-                </div>
-                <div class="tool">
+                </button>
+                <button class="tool" id="assets">
                     <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 0 24 24" width="40px" fill="#FFFFFF">
                         <path d="M0 0h24v24H0z" fill="none" />
                         <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
                     </svg>
-                </div>
+                </button>
             </div>
         </div>
-        <div class="editor-body-middle"></div>
+        <div class="editor-body-middle">
+            <div style="display: none" id="add-setup" class="editor">
+                <h5>Add Elements</h5>
+
+            </div>
+            <div id="body"></div>
+        </div>
         <div class="editor editor-body-right"></div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script type="module" src="/js/editor/index.js"></script>
 </body>
 
 </html>
