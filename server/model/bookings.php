@@ -6,8 +6,8 @@ class Bookings
         $servername = "127.0.0.1";
         $connectionStatement = "mysql:host=$servername;dbname=Guatemala";
         $cred = $this->getUsernamePassword();
-        $dbUsername = $cred[0];
-        $dbPassword = $cred[1];
+        $dbUsername = "uday";
+        $dbPassword = "software";
         $this->tableName = "Bookings";
         $this->connection = new PDO($connectionStatement, $dbUsername, $dbPassword);
     }

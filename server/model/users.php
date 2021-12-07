@@ -6,10 +6,11 @@ class Users
         $servername = "127.0.0.1";
         $connectionStatement = "mysql:host=$servername;dbname=Guatemala";
         $cred = $this->getUsernamePassword();
-        $dbUsername = $cred[0];
-        $dbPassword = $cred[1];
+        $dbUsername = "uday";
+        $dbPassword = "software";
         $this->tableName = "Users";
         $this->connection = new PDO($connectionStatement, $dbUsername, $dbPassword);
+        $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
 
@@ -20,6 +21,15 @@ class Users
         $username = $jsonData['db_username'];
         $password = $jsonData['db_password'];
         return [$username, $password];
+    }
+
+    public function getAdmins($email)
+    {
+        $sql = "SELECT * FROM " . $this->tableName . " WHERE email='$email'";
+        $stmt =  $this->connection->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        return $result;
     }
 
     public function read($userId = null)
