@@ -82,7 +82,7 @@ function getFooter()
                 <div class="c-header">
                     <h4 class="card-title">Most Recent Bookings</h4>
                 </div>
-                <div class="table">
+                <div class="table" style="box-shadow: none; margin-top: 0px;">
                     <div class="c-column c-thead">
                         <span class="thead-data">Date</span>
                         <span class="thead-data">From</span>

@@ -35,6 +35,7 @@
             <a href="/admin">Dashboard</a>
             <a href="#">Users</a>
             <a href="#">Bookings</a>
+            <a href="/admin/shuttles.php">Shuttles</a>
             <a href="#">Admins</a>
             <a href="/admin/pages.php">Pages</a>
         </div>

@@ -7,7 +7,7 @@ div.left-section {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 40%;
+  width: 60%;
 }
 
 nav.admin-nav {
@@ -223,4 +223,76 @@ button.com-btn {
   border-radius: 100px;
   width: 90%;
   margin-top: 10px;
+}
+
+div.c-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
+}
+
+button.c-button {
+  background-color: #9fffff;
+  padding: 10px 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+input.c-input {
+  outline: none;
+  padding: 15px;
+  border-radius: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.71);
+}
+
+div.input-container {
+  display: flex;
+  border-radius: 100px;
+  padding-right: 10px;
+  align-items: center;
+  justify-content: space-between;
+  width: 40%;
+  box-shadow: 0px 4px 23px rgba(0, 0, 0, 0.25);
+}
+
+div.table {
+  background-color: white;
+  border-radius: 15px;
+  height: 585px;
+  overflow: scroll;
+  margin-top: 50px;
+  box-shadow: 0px 4px 21px rgba(0, 0, 0, 0.25);
+}
+
+div.t-row {
+  transition: background-color 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.342);
+}
+
+div.thead > span {
+  font-weight: bold;
+}
+
+span.t-data-b {
+  font-weight: bold;
+}
+
+span.t-data {
+  width: 15%;
+}
+
+div.t-row:hover {
+  transition: background-color 0.2s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.096);
+}
+
+div.thead:hover {
+  transition: background-color 0.2s ease-in-out;
+  background-color: transparent;
 }

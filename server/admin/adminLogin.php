@@ -12,16 +12,24 @@ function getFooter()
     require "./adminFooter.php";
 }
 
+function redirect($url)
+{
+    header("Location: " . $url);
+    die();
+}
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST["email"];
     $password = $_POST["password"];
     $adminData = $users->getAdmins($email);
-    if ($password === $adminData[0]["password"]) {
-        session_start();
-        $_SESSION["admin_email"] = $email;
-        echo $_SESSION["admin_email"];
-        header("Location: /admin/");
-        die();
+    if ($adminData[0]["role"] === "admin" || $adminData[0]["role"] === "supermeAdmin") {
+        if ($password === $adminData[0]["password"]) {
+            session_start();
+            $_SESSION["admin_email"] = $email;
+            redirect("/admin/");
+        }
+    } else {
+        redirect("/");
     }
 }
 ?>
