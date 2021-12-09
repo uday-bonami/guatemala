@@ -1,4 +1,13 @@
 <?php
+require "../model/shuttles.php";
+
+session_start();
+
+if (!isset($_SESSION["admin_email"])) {
+    header("Location: /admin/adminLogin.php");
+    die();
+}
+
 function getHeaders()
 {
     require "./adminHeader.php";
@@ -7,6 +16,25 @@ function getHeaders()
 function getFooter()
 {
     require "./adminFooter.php";
+}
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $shuttleName = $_POST["shuttle-name"];
+    $shuttlePrice = $_POST["shuttle-price"];
+    $capcity = $_POST["capcity"];
+    $date = $_POST["date"];
+    $returnDate = $_POST["return-date"];
+
+    $data = array(
+        "shuttle_name" =>  $shuttleName,
+        "price" => $shuttlePrice,
+        "passenger_capacity" => $capcity,
+        "date" => $date,
+        "return_date" => $returnDate
+    );
+
+    $shuttles = new Shuttles();
+    $shuttles->create($data);
 }
 ?>
 
@@ -41,7 +69,7 @@ function getFooter()
                 <form method="post" style="padding: 35px;">
                     <input type="text" placeholder="Enter Shuttle Name" name="shuttle-name" class="c-input">
                     <input type="number" placeholder="Enter Shuttle Price" name="shuttle-price" class="c-input">
-                    <input type="number" placeholder="Passenger capacity" name="shuttle-price" class="c-input">
+                    <input type="number" placeholder="Passenger capacity" name="capcity" class="c-input">
                     <input type="date" placeholder="Date" name="date" class="c-input">
                     <input type="date" placeholder="Return Date" name="return-date" class="c-input">
                     <div class="buttons">

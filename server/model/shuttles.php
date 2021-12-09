@@ -33,7 +33,7 @@ class Shuttles extends Base
             $date = $data["date"];
             $return_date = $data["return_date"];
 
-            $sql = "CREATE " . $this->tableName . "(shuttle_name, price, passenger_capacity, date, return_date) VALUES ($shuttle_name, $price, $passenger_capacity, $date, $return_date)";
+            $sql = "INSERT INTO " . $this->tableName . " (shuttle_name, price, passenger_capacity, _date, return_date) VALUES ('$shuttle_name', '$price', '$passenger_capacity', '$date', '$return_date')";
             $this->connection->exec($sql);
         }
         return null;

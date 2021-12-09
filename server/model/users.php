@@ -49,7 +49,7 @@ class Users extends Base
             $email = $data["email"];
             $password = $data["password"];
             $role = $data["role"];
-            $sql = "CREATE " . $this->tableName . "(username, email, password, role) VALUES ($username, $email, $password, $role)";
+            $sql = "INSERT INTO " . $this->tableName . "(username, email, password, role) VALUES ($username, $email, $password, $role)";
             $this->connection->exec($sql);
             return true;
         }
