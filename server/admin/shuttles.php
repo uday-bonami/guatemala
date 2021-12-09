@@ -18,6 +18,12 @@ function getFooter()
     require "./adminFooter.php";
 }
 
+function getShuttles()
+{
+    $shuttles = new Shuttles();
+    return $shuttles->read();
+}
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $shuttleName = $_POST["shuttle-name"];
     $shuttlePrice = $_POST["shuttle-price"];
@@ -32,10 +38,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         "date" => $date,
         "return_date" => $returnDate
     );
-
     $shuttles = new Shuttles();
     $shuttles->create($data);
 }
+
+$shuttles = getShuttles();
 ?>
 
 <?php getHeaders(); ?>
@@ -90,21 +97,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <span class="t-data">Date</span>
         <span class="t-data">Return Date</span>
     </div>
-    <div class="t-row t-body">
-        <span class="t-data t-data-b">1</span>
-        <span class="t-data">Maharaja</span>
-        <span class="t-data">$500</span>
-        <span class="t-data">200</span>
-        <span class="t-data">20-01-2021</span>
-        <span class="t-data">20-01-2021</span>
-    </div>
-    <div class="t-row t-body">
-        <span class="t-data t-data-b">2</span>
-        <span class="t-data">Spider-man</span>
-        <span class="t-data">$500</span>
-        <span class="t-data">200</span>
-        <span class="t-data">20-01-2021</span>
-        <span class="t-data">20-01-2021</span>
-    </div>
+    <?php foreach ($shuttles as $shuttle) : ?>
+        <div class="t-row t-body">
+            <span class="t-data t-data-b"><?php echo $shuttle["id"] ?></span>
+            <span class="t-data"><?php echo $shuttle["shuttle_name"] ?></span>
+            <span class="t-data">$<?php echo $shuttle["price"] ?></span>
+            <span class="t-data"><?php echo $shuttle["passenger_capacity"] ?></span>
+            <span class="t-data"><?php echo $shuttle["_date"] ?></span>
+            <span class="t-data"><?php echo $shuttle["return_date"] ?></span>
+        </div>
+    <?php endforeach; ?>
 </div>
 <?php getFooter(); ?>
