@@ -260,8 +260,9 @@ div.input-container {
 
 div.table {
   background-color: white;
-  border-radius: 15px;
+  border-radius: 10px;
   height: 585px;
+  padding: 20px;
   overflow: scroll;
   margin-top: 50px;
   box-shadow: 0px 4px 21px rgba(0, 0, 0, 0.25);
@@ -286,7 +287,7 @@ span.t-data-b {
 }
 
 span.t-data {
-  width: 15%;
+  width: 166px;
 }
 
 div.t-row:hover {
