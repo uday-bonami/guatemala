@@ -94,7 +94,7 @@ $shuttles = getShuttles();
             <span class="t-data t-data-b">id</span>
             <span class="t-data">Shuttle</span>
             <span class="t-data">Price</span>
-            <span class="t-data">Passenger capacity</span>
+            <span class="t-data">Capacity</span>
             <span class="t-data">Date</span>
             <span class="t-data">Return Date</span>
         </div>
