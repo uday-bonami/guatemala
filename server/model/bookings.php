@@ -1,26 +1,9 @@
 <?php
-class Bookings
+return $_SERVER["DOCUMENT_ROOT"] . "/model/base.php";
+
+class Bookings extends Base
 {
-    public function __construct()
-    {
-        $servername = "127.0.0.1";
-        $connectionStatement = "mysql:host=$servername;dbname=Guatemala";
-        $cred = $this->getUsernamePassword();
-        $dbUsername = "uday";
-        $dbPassword = "software";
-        $this->tableName = "Bookings";
-        $this->connection = new PDO($connectionStatement, $dbUsername, $dbPassword);
-    }
-
-
-    private function getUsernamePassword()
-    {
-        $json = file_get_contents("config.json");
-        $jsonData = json_decode($json, true);
-        $username = $jsonData['db_username'];
-        $password = $jsonData['db_password'];
-        return [$username, $password];
-    }
+    private $tableName = "Bookings";
 
     public function read($userId = null)
     {

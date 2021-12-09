@@ -1,27 +1,9 @@
 <?php
-class Users
+require  $_SERVER['DOCUMENT_ROOT'] . "/model/base.php";
+
+class Users extends Base
 {
-    public function __construct()
-    {
-        $servername = "127.0.0.1";
-        $connectionStatement = "mysql:host=$servername;dbname=Guatemala";
-        $cred = $this->getUsernamePassword();
-        $dbUsername = "uday";
-        $dbPassword = "software";
-        $this->tableName = "Users";
-        $this->connection = new PDO($connectionStatement, $dbUsername, $dbPassword);
-        $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    }
-
-
-    private function getUsernamePassword()
-    {
-        $json = file_get_contents("config.json");
-        $jsonData = json_decode($json, true);
-        $username = $jsonData['db_username'];
-        $password = $jsonData['db_password'];
-        return [$username, $password];
-    }
+    private $tableName = "Users";
 
     public function getAdmins($email)
     {
@@ -62,7 +44,7 @@ class Users
 
     public function create($data)
     {
-        if (in_array("username", $data) && in_array("password", $data) && in_array("email", $data)) {
+        if (array_key_exists("username", $data) && array_key_exists("password", $data) && array_key_exists("email", $data)) {
             $username = $data["username"];
             $email = $data["email"];
             $password = $data["password"];
