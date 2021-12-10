@@ -1,5 +1,5 @@
 <?php
-return $_SERVER["DOCUMENT_ROOT"] . "/model/base.php";
+require $_SERVER["DOCUMENT_ROOT"] . "/model/base.php";
 
 class Bookings extends Base
 {

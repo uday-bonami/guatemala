@@ -1,4 +1,6 @@
 <?php
+session_start();
+$isLogin = isset($_SESSION["email"]);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +35,7 @@
             <div class="container px-5 py-2 NavbarDiv">
                 <a class="navbar-brand" href="index.html">
                     <img src="img/logo.png" />
-                </a> -->
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -56,6 +58,9 @@
             </li> -->
                     </ul>
                 </div>
+                <?php if (!$isLogin) : ?>
+                    <a class="sign-btn" href="/login.php">Sign in</a>
+                <?php endif; ?>
             </div>
         </nav>
     </header>

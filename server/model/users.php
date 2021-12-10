@@ -14,9 +14,9 @@ class Users extends Base
         return $result;
     }
 
-    public function read($userId = null)
+    public function read($userEmail = null)
     {
-        if (!$userId) {
+        if (!$userEmail) {
             $sql = "SELECT * FROM " . $this->tableName;
             $stmt = $this->connection->prepare($sql);
             $stmt->execute();
@@ -24,7 +24,7 @@ class Users extends Base
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             $result = $stmt->fetchAll();
         } else {
-            $sql = "SELECT * FROM " . $this->tableName . " WHERE id=$userId";
+            $sql = "SELECT * FROM " . $this->tableName . " WHERE email=$userEmail";
             $stmt =  $this->connection->prepare($sql);
             $result = $stmt->fetchAll();
         }

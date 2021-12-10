@@ -97,6 +97,7 @@ $shuttles = getShuttles();
             <span class="t-data">Capacity</span>
             <span class="t-data">Date</span>
             <span class="t-data">Return Date</span>
+            <span class="t-data">Edit</span>
         </div>
         <?php foreach ($shuttles as $shuttle) : ?>
             <div class="t-row t-body">
@@ -106,6 +107,7 @@ $shuttles = getShuttles();
                 <span class="t-data"><?php echo $shuttle["passenger_capacity"] ?></span>
                 <span class="t-data"><?php echo $shuttle["_date"] ?></span>
                 <span class="t-data"><?php echo $shuttle["return_date"] ?></span>
+                <span class="t-data"><a href="#">Edit</a></span>
             </div>
         <?php endforeach; ?>
     </div>
