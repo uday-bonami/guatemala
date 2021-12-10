@@ -10,7 +10,7 @@ class Bookings extends Base
         if (!$userId) {
             $sql = "SELECT * FROM " . $this->tableName;
             $stmt = $this->connection->prepare($sql);
-            $stmt->execute();
+			$stmt->execute();
 
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             $result = $stmt->fetchAll();

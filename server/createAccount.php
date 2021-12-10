@@ -1,22 +1,6 @@
 <?php
-require "./model/users.php";
-
-function getUserData($email)
-{
-    $user = new Users();
-    $user->read($userEmail = $email);
-}
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-    $userData = getUserData($email)[0];
-    if ($password === $userData["password"]) {
-        session_start();
-        $_SESSION["email"] = $email;
-    }
-}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,15 +25,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <!--Slick-->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
-    <title>Guatemala</title>
+    <title>Guatemala-Admin</title>
 </head>
 
 <body>
-    <style>
-        button.com-btn {
-            margin: 0px 10px;
-        }
-    </style>
     <nav class="navbar navbar-default navbar-fixed-top navbar" style="background-color: #D4FFFF">
         <a class="navbar-brand" href="/">
             <img src="/img/logo.png" alt="brand-logo" style="width: 150px">
@@ -61,15 +40,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <h2>Welcome</h2>
                 <h5>To Guatwmala Shuttles</h5>
             </div>
-            <div class="center" style="height: 55%">
+            <div class="center" style="height: 70%">
                 <form action="/login.php" method="post">
+                    <input class="custom-input" type="text" name="username" placeholder="Enter your name" />
                     <input class="custom-input" type="email" name="email" placeholder="Enter email" />
                     <input class="custom-input" type="password" name="password" name="password" placeholder="Enter password" />
-                    <a href="#" style="width: 85%; text-align: right;">forget password?</a>
-                    <div class="buttons">
-                        <button class="com-btn" type="submit">Sign in</button>
-                        <button id="create-account" type="button" style="background-color: #1F4056; color: white" class="com-btn">Create Account</button>
-                    </div>
+                    <input class="custom-input" type="password" name="comform-password" name="password" placeholder="Conform password" />
+                    <button class="com-btn" type="submit">Create</button>
                 </form>
             </div>
             <div class="center">
@@ -83,10 +60,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="/js/global.js"></script>
     <script>
-        const createAccountBtn = document.getElementById("create-account");
-        if (createAccountBtn) {
-            createAccountBtn.onclick = () => window.location.replace("/createAccount.php");
-        }
         $('.responsive2').slick({
             dots: false,
             infinite: true,

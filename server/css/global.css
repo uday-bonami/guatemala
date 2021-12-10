@@ -123,7 +123,8 @@ a {
   cursor: pointer;
 }
 
-a.sign-btn {
+a.sign-btn,
+a.link-btn {
   background-color: #1e3d57;
   color: white;
   padding: 10px 15px;
