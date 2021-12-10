@@ -1,4 +1,27 @@
 <?php
+require "./model/users.php";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST["username"];
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+    $comformPassword = $_POST["comform-password"];
+    if (!empty($name) && !empty($email) && !empty($password) && !empty($comformPassword)) {
+        if ($password === $comformPassword) {
+            $users = new Users();
+            $password = sha1($password);
+            $data = array(
+                "username" => $name,
+                "email" => $email,
+                "password" => $password,
+                "role" => "user",
+            );
+            $users->create($data);
+        } else {
+            echo "Password did not match";
+        }
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -41,11 +64,11 @@
                 <h5>To Guatwmala Shuttles</h5>
             </div>
             <div class="center" style="height: 70%">
-                <form action="/login.php" method="post">
-                    <input class="custom-input" type="text" name="username" placeholder="Enter your name" />
-                    <input class="custom-input" type="email" name="email" placeholder="Enter email" />
-                    <input class="custom-input" type="password" name="password" name="password" placeholder="Enter password" />
-                    <input class="custom-input" type="password" name="comform-password" name="password" placeholder="Conform password" />
+                <form action="/createAccount.php" method="post">
+                    <input class="custom-input" required type="text" name="username" placeholder="Enter your name" />
+                    <input class="custom-input" required type="email" name="email" placeholder="Enter email" />
+                    <input class="custom-input" required type="password" name="password" name="password" placeholder="Enter password" />
+                    <input class="custom-input" required type="password" name="comform-password" name="password" placeholder="Conform password" />
                     <button class="com-btn" type="submit">Create</button>
                 </form>
             </div>
