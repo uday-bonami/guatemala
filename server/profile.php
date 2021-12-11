@@ -10,7 +10,8 @@ require "./model/users.php";
 $email = $_SESSION["email"];
 
 $users = new Users();
-$userData = $users->read($email);
+$userData = $users->read($email)[0];
+
 
 function getHeader()
 {
@@ -50,7 +51,35 @@ function getHeader()
             <img src="/img/logo.png" alt="brand-logo" style="width: 150px">
         </a>
     </nav>
-    <h1><?php echo $email ?></h1>
+    <div class="center">
+        <div class="profile">
+            <img src="/user_content/default.png" alt="profile-picture" class="profile-picture">
+            <div style="display: flex;justify-content: center;flex-direction:column">
+                <h1><?php echo $userData['username'] ?></h1>
+                <a href="#"><?php echo $userData['email'] ?></a>
+            </div>
+        </div>
+    </div>
+    <div class="center" style="width: 100%; height: 375px">
+        <div class="card" style="width: 70%;height: 100%;padding: 0px;">
+            <div class="tabs" style="grid-template-columns: 20% 80%;height: 100%;">
+                <div class="btn-section" style="width: 100%; height: 100%;display: block">
+                    <div class="tabs-btn">
+                        <button class="tab-btn active">Bookings</button>
+                        <button class="tab-btn"> Cancled Bookings</button>
+                        <button class="tab-btn">Profile Settings</button>
+                    </div>
+                </div>
+                <div class="content-section">
+                    <div class="tabs-content">
+                        <div class="tab-content-active">test1</div>
+                        <div class="tab-content">test2</div>
+                        <div class="tab-content">test3</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="/js/index.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>

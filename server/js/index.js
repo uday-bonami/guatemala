@@ -37,11 +37,6 @@ function startRipple() {
   }
 }
 
-function main() {
-  startRipple();
-  popupSetup();
-}
-
 function popupSetup() {
   const openButton = document.getElementById("open-popup");
   const popupCloseButtons = document.getElementsByClassName("popup-close");
@@ -66,4 +61,43 @@ function popupSetup() {
   }
 }
 
+function tabSetup() {
+  const tabsBtn = document.getElementsByClassName("tab-btn");
+
+  if (tabsBtn.length !== 0) {
+    for (let tabBtn of tabsBtn) {
+      tabBtn.onclick = (e) => {
+        const btnCollections = e.target.parentNode;
+        const btnSection = btnCollections.parentNode;
+        const tabs = btnSection.parentNode;
+        const contentSection = tabs.childNodes[3];
+        const tabsContent = contentSection.childNodes[1];
+        const contents = tabsContent.childNodes;
+
+        const btns = [...btnCollections.childNodes];
+        let i = 0;
+        for (let btn of btns) {
+          if (btn === e.target) break;
+          i++;
+        }
+
+        const selectedContent = contents[i];
+        const lastActiveBtn =
+          btnCollections.getElementsByClassName("active")[0];
+        const lastActiveContent =
+          tabsContent.getElementsByClassName("tab-content-active")[0];
+        lastActiveBtn.className = "tab-btn";
+        lastActiveContent.className = "tab-content";
+        selectedContent.className = "tab-content-active";
+        e.target.classList.add("active");
+      };
+    }
+  }
+}
+
+function main() {
+  startRipple();
+  tabSetup();
+  popupSetup();
+}
 main();
