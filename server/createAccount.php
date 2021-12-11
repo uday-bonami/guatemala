@@ -17,6 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 "role" => "user",
             );
             $users->create($data);
+            header("Location: /profile.php");
+            die();
         } else {
             echo "Password did not match";
         }
