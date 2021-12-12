@@ -109,13 +109,6 @@ function getHeader()
         <div class="right-section">
             <div class="profile">
                 <img class="profile-picture" style="margin: 0px" src="<?php echo $profilePic; ?>" alt="avatar" id="user-nav-p-img" />
-                <!-- <span class="admin-name profile-content"><?php echo $userData["username"] ?></span>
-                <div class="drop-down profile-content">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 0 24 24" width="36px" fill="#1E3D57">
-                        <path d="M0 0h24v24H0z" fill="none" />
-                        <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z" />
-                    </svg>
-                </div> -->
                 <div class="btn-group">
                     <button style="background-color: transparent; color: black; border: none;" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <?php echo $userData["username"] ?>
