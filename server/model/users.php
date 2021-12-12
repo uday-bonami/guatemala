@@ -40,8 +40,9 @@ class Users extends Base
         $data = $updatedData["data"];
         foreach ($updatedFeild as $feild) {
             $d = $data[$feild];
-            $sql = "UPDATE " . $this->tableName . " SET $feild = $d WHERE id = $user_id";
-            $this->connection->query($sql);
+            $sql = "UPDATE " . $this->tableName . " SET $feild='$d' WHERE id='$user_id'";
+            $stmt =  $this->connection->prepare($sql);
+            $stmt->execute();
         }
     }
 
