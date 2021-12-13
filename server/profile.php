@@ -24,6 +24,8 @@ function uploadFile($fileObj)
         } else {
             echo "Invalid upload try to upload a smaller image";
         }
+    } else {
+        echo "Invalid file type. " . $fileType . " is not excepted.";
     }
 }
 
@@ -55,6 +57,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $updateData["data"] = $updatedData;
         $users->update($updateData, $userData["id"]);
     }
+    header("Location: /profile.php");
+    die();
 }
 
 $userData = $users->read($email)[0];

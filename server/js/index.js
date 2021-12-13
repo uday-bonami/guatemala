@@ -48,7 +48,6 @@ function popupSetup() {
       }
     };
   }
-
   if (popupCloseButtons.length !== 0) {
     for (let button of popupCloseButtons) {
       button.onclick = () => {

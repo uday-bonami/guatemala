@@ -388,3 +388,7 @@ div.tab-content {
 div.tab-content-active {
   display: block;
 }
+
+div.col {
+  display: flex;
+}

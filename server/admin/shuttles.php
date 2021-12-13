@@ -24,22 +24,50 @@ function getShuttles()
     return $shuttles->read();
 }
 
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $shuttleName = $_POST["shuttle-name"];
     $shuttlePrice = $_POST["shuttle-price"];
     $capcity = $_POST["capcity"];
     $date = $_POST["date"];
+    $discription = $_POST["discription"];
     $returnDate = $_POST["return-date"];
+    $thumbnail = $_FILES["thumbnail"];
+    $preview = $_FILES["preview"];
+
 
     $data = array(
         "shuttle_name" =>  $shuttleName,
         "price" => $shuttlePrice,
         "passenger_capacity" => $capcity,
         "date" => $date,
+        "discription" => $discription,
         "return_date" => $returnDate
     );
     $shuttles = new Shuttles();
-    $shuttles->create($data);
+
+    try {
+        if (count($preview["name"]) === 3) {
+            $imgPaths = $shuttles->uploadFiles($thumbnail, $preview);
+            $previewImgPath = $imgPaths[0];
+            $thumbnail = explode("..", $imgPaths[1])[1];
+            $previewImgPath1 = explode("..", $previewImgPath[0])[1];
+            $previewImgPath2 = explode("..", $previewImgPath[1])[1];
+            $previewImgPath3 = explode("..", $previewImgPath[2])[1];
+
+            $data["preview1"] = $previewImgPath1;
+            $data["preview2"] = $previewImgPath2;
+            $data["preview3"] = $previewImgPath3;
+            $data["thumbnail"] = $thumbnail;
+
+            $shuttles->create($data);
+            header("Location: /admin/shuttles.php");
+        } else {
+            throw new Exception("Select upto 3 images");
+        }
+    } catch (Exception $e) {
+        echo strval($e);
+    }
 }
 
 $shuttles = getShuttles();
@@ -67,19 +95,28 @@ $shuttles = getShuttles();
         </div>
     </div>
     <div id="popup" style="display: none">
-        <div class="card" style="box-shadow: none; width: 50%; position: relative;">
+        <div class="card" style="box-shadow: none; width: 50%;height: 75%; overflow: scroll; position: relative;">
             <div class="close-btn">
                 <button type="button" id="popup-close" class="btn-close popup-close" aria-label="Close"></button>
             </div>
             <div class="popup-body" style="padding: 15px;">
                 <h3>Add Shuttles</h3>
                 <div class="form-container">
-                    <form method="post" style="padding: 35px;">
+                    <form method="post" enctype="multipart/form-data" action="/admin/shuttles.php" style="padding: 35px; display: block;">
                         <input type="text" placeholder="Enter Shuttle Name" name="shuttle-name" class="c-input">
                         <input type="number" placeholder="Enter Shuttle Price" name="shuttle-price" class="c-input">
                         <input type="number" placeholder="Passenger capacity" name="capcity" class="c-input">
-                        <input type="date" placeholder="Date" name="date" class="c-input">
-                        <input type="date" placeholder="Return Date" name="return-date" class="c-input">
+                        <div class="col">
+                            <input type="date" placeholder="Date" name="date" class="c-input">
+                            <input type="date" placeholder="Return Date" name="return-date" class="c-input">
+                        </div>
+                        <textarea placeholder="Write a short discription" name="discription" rows="4" cols="50" style="margin-top: 0px;margin-bottom: 0px;height: 219px;border: 1px solid #0000009c;outline: none;border-radius: 5px;padding: 10px;"></textarea>
+                        <div class="col" style="justify-content: space-between; margin: 10px">
+                            <label class="shuttle-img" for="thumbnail">Shuttle thumbnail</label>
+                            <input type="file" id="thumbnail" name="thumbnail" />
+                            <label class="shuttle-img" for="preview">Shuttle preview</label>
+                            <input type="file" id="preview" multiple name="preview[]" />
+                        </div>
                         <div class="buttons">
                             <button class="btn c-button" type="submit">Submit</button>
                             <a style="display: flex; align-items: center;" role="button" class="btn btn-outline-info popup-close">Cancel</a>
@@ -92,7 +129,7 @@ $shuttles = getShuttles();
     <div class="table">
         <div class="t-row thead">
             <span class="t-data t-data-b">id</span>
-            <span class="t-data">Shuttle</span>
+            <span class="t-data">Shuttle Name</span>
             <span class="t-data">Price</span>
             <span class="t-data">Capacity</span>
             <span class="t-data">Date</span>
