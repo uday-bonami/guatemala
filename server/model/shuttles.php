@@ -141,7 +141,7 @@ class Shuttles extends Base
                 move_uploaded_file($thumbnail["tmp_name"], $fileDestination);
                 return $fileDestination;
             } else {
-                throw new Exception("Image size must be between 2000 and 2000");
+                throw new Exception("Image size must be between 1000 and 1000");
             }
         } else {
             throw new Exception("Unexpected file type");

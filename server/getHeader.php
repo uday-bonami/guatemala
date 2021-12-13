@@ -1,6 +1,11 @@
 <?php
 session_start();
+require "./model/users.php";
 $isLogin = isset($_SESSION["email"]);
+if ($isLogin) {
+    $users = new Users();
+    $userData = $users->read($_SESSION["email"])[0];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +24,7 @@ $isLogin = isset($_SESSION["email"]);
     <link href="css/home.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/about.css" />
     <link rel="stylesheet" href="css/faq.css">
+    <!-- <link rel="stylesheet" href="/css/main.css" /> -->
     <!-- <link rel="stylesheet" href="css/Contact.css"> -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
     <link href="css/responsive.css" rel="stylesheet">
@@ -59,7 +65,22 @@ $isLogin = isset($_SESSION["email"]);
                     </ul>
                 </div>
                 <?php if (!$isLogin) : ?>
-                    <a class="sign-btn" href="/login.php">Sign in</a>
+                    <a style="background: #1E3D57;
+                        box-shadow: 0px 4px 13px 5px rgba(0, 0, 0, 0.25);
+                        border-radius: 10px;padding: 10px 20px; color: white" class="sign-btn" href="/login.php">Sign in</a>
+                <?php else : ?>
+                    <div class="profile">
+                        <img class="profile-picture" style="margin: 0px; width: 10%; height: 10%; border-radius: 50%" src="<?php echo $userData["profile_pic"]; ?>" alt="avatar" id="user-nav-p-img" />
+                        <div class="btn-group">
+                            <button style="background-color: transparent; color: black; border: none;" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <?php echo $userData["username"] ?>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/profile.php">View Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 <?php endif; ?>
             </div>
         </nav>
