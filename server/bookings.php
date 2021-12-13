@@ -86,23 +86,23 @@ $shuttleData = $shuttle->read();
                     <form class="row" style="flex-direction: row">
                         <div class="col-12 col-sm-12 col-md-4 col-lg-2 col-xxl-2">
                             <label for="inputEmail4" class="form-label">From</label>
-                            <input type="text" class="form-control" name="from" placeholder="Guatemala" id="inputEmail4" />
+                            <input value="<?php echo $from ?>" type="text" class="form-control" name="from" placeholder="Guatemala" id="inputEmail4" />
                         </div>
                         <div class="col-12 col-sm-12 col-md-4 col-lg-2 col-xxl-2">
                             <label for="inputPassword4" class="form-label">Destination</label>
-                            <input type="text" name="destination" class="form-control" placeholder="Honduras" id="inputPassword4" />
+                            <input value="<?php echo $destination ?>" type="text" name="destination" class="form-control" placeholder="Honduras" id="inputPassword4" />
                         </div>
                         <div class="col-12 col-sm-12 col-md-4 col-lg-2 col-xxl-2">
                             <label for="date" class="form-label">Date</label>
-                            <input type="date" name="date" class="form-control" id="date" />
+                            <input value="<?php echo $date ?>" type="date" name="date" class="form-control" id="date" />
                         </div>
                         <div class="col-12 col-sm-12 col-md-4 col-lg-2 col-xxl-2">
                             <label for="return" class="form-label">Return Date</label>
-                            <input type="date" name="return-date" class="form-control" id="return" />
+                            <input value="<?php echo $return_date ?>" type="date" name="return-date" class="form-control" id="return" />
                         </div>
                         <div class="col-12 col-sm-12 col-md-4 col-lg-2 col-xxl-2">
                             <label for="passenger" class="form-label">Passenger</label>
-                            <input type="number" name="passenger" class="form-control" placeholder="2 Passenger" value="Passenger" id="passenger" />
+                            <input value="<?php echo $passenger ?>" type="number" name="passenger" class="form-control" placeholder="2 Passenger" value="Passenger" id="passenger" />
                         </div>
                         <div class="col-12 col-sm-12 col-md-4 col-lg-2 col-xxl-2">
                             <label for="passenger" class="form-label"></label>
@@ -143,46 +143,4 @@ $shuttleData = $shuttle->read();
             <?php endforeach; ?>
         </div>
     </div>
-    <script src="/js/index.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="/js/global.js"></script>
-    <script>
-        $('.responsive2').slick({
-            dots: false,
-            infinite: true,
-            speed: 300,
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            arrows: true,
-            responsive: [{
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                        infinite: true,
-                        dots: false,
-                        nav: true,
-                    }
-                },
-                {
-                    breakpoint: 800,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-            ]
-        });
-    </script>
-</body>
-
-</html>
+    <?php require "./getFooter.php" ?>
