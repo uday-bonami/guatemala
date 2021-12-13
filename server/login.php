@@ -16,6 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (sha1($password) === $userPassword) {
         session_start();
         $_SESSION["email"] = $email;
+        $_SESSION["username"] = $userData["username"];
+        $_SESSION["profile_pic"] = $userData["profile_pic"];
         header("Location: /profile.php");
         die();
     } else {
