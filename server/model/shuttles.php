@@ -126,7 +126,7 @@ class Shuttles extends Base
         foreach ($tmpName as $name) {
             $imgSize = getimagesize($name);
             $fileType = strtolower(explode("/", $types[$i])[1]);
-            if ($imgSize[0] < 2000 || $imgSize[1] < 2000) {
+            if ($imgSize[0] < 2000 && $imgSize[1] < 2000) {
                 $fileName = uniqid("", true) . "." . $fileType;
                 $fileDestination = $this->uploadDir . $fileName;
                 move_uploaded_file($name, $fileDestination);
