@@ -126,12 +126,6 @@ $shuttleData = $shuttle->read();
         <div class="center">
             <?php foreach ($shuttleData as $shuttle) : ?>
                 <div class="card mb-3" style="width: 100%;">
-                    <!-- <img src="<?php echo $shuttle["thumbnail"] ?>" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"><?php echo $shuttle["shuttle_name"] ?></h5>
-                    <p class="card-text"><?php echo $shuttle["discription"] ?></p>
-                    <a href="#" class="btn btn-primary">Button</a>
-                </div> -->
                     <div class="row g-0">
                         <div class="col-md-4">
                             <img src="<?php echo $shuttle["thumbnail"] ?>" class="img-fluid rounded-start" alt="...">
@@ -141,21 +135,13 @@ $shuttleData = $shuttle->read();
                                 <h5 class="card-title"><?php echo $shuttle["shuttle_name"] ?></h5>
                                 <p class="card-text"><?php echo $shuttle["discription"] ?></p>
                                 <p class="card-text"><?php echo $shuttle["_from"] ?>-<?php echo $shuttle["_to"] ?></p>
-                                <a href="#" class="btn btn-primary">Button</a>
+                                <a href="#" class="btn btn-primary btn-lg">Button</a>
                             </div>
                         </div>
                     </div>
                 </div>
             <?php endforeach; ?>
         </div>
-        <!-- <div class="card mb-3">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-        </div> -->
     </div>
     <script src="/js/index.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
