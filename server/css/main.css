@@ -392,3 +392,14 @@ div.tab-content-active {
 div.col {
   display: flex;
 }
+
+div.banner {
+  background-color: #d4ffff;
+  width: 100vw;
+  height: 268px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: visible;
+}

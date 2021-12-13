@@ -30,6 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $shuttlePrice = $_POST["shuttle-price"];
     $capcity = $_POST["capcity"];
     $date = $_POST["date"];
+    $from = $_POST["from"];
+    $to = $_POST["to"];
     $discription = $_POST["discription"];
     $returnDate = $_POST["return-date"];
     $thumbnail = $_FILES["thumbnail"];
@@ -42,7 +44,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         "passenger_capacity" => $capcity,
         "date" => $date,
         "discription" => $discription,
-        "return_date" => $returnDate
+        "return_date" => $returnDate,
+        "_from" => $from,
+        "_to" => $to,
     );
     $shuttles = new Shuttles();
 
@@ -104,6 +108,8 @@ $shuttles = getShuttles();
                 <div class="form-container">
                     <form method="post" enctype="multipart/form-data" action="/admin/shuttles.php" style="padding: 35px; display: block;">
                         <input type="text" placeholder="Enter Shuttle Name" name="shuttle-name" class="c-input">
+                        <input type="text" placeholder="from" name="from" class="c-input">
+                        <input type="text" placeholder="to" name="to" class="c-input">
                         <input type="number" placeholder="Enter Shuttle Price" name="shuttle-price" class="c-input">
                         <input type="number" placeholder="Passenger capacity" name="capcity" class="c-input">
                         <div class="col">

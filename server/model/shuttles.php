@@ -7,9 +7,9 @@ class Shuttles extends Base
     private $exceptedTypes = array("jpg", "png", "jpeg");
     private $uploadDir = "../shuttles_imgs/";
 
-    public function read($id = null)
+    public function read($to = null)
     {
-        if (!$id) {
+        if (!$to) {
             $sql = "SELECT * FROM " . $this->tableName;
             $stmt = $this->connection->prepare($sql);
             $stmt->execute();
@@ -17,8 +17,10 @@ class Shuttles extends Base
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             $result = $stmt->fetchAll();
         } else {
-            $sql = "SELECT * FROM " . $this->tableName . " WHERE " . "id=$id";
+            $sql = "SELECT * FROM " . $this->tableName . " WHERE " . "_to='$to'";
+
             $stmt = $this->connection->prepare($sql);
+            $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             $result = $stmt->fetchAll();
         }
@@ -37,7 +39,9 @@ class Shuttles extends Base
             array_key_exists("preview1", $data) &&
             array_key_exists("preview2", $data) &&
             array_key_exists("preview3", $data) &&
-            array_key_exists("discription", $data)
+            array_key_exists("discription", $data) &&
+            array_key_exists("_to", $data) &&
+            array_key_exists("_from", $data)
         ) {
             $shuttle_name = $data["shuttle_name"];
             $price = $data["price"];
@@ -50,6 +54,8 @@ class Shuttles extends Base
             $preview2 = $data["preview2"];
             $preview3 = $data["preview3"];
             $discription = $data["discription"];
+            $_from = $data["_from"];
+            $_to = $data["_to"];
 
             $sql = "INSERT INTO " . $this->tableName . " (
                 shuttle_name,
@@ -61,7 +67,9 @@ class Shuttles extends Base
                 thumbnail,
                 preview1,
                 preview2,
-                preview3) VALUES (
+                preview3,
+                _from,
+                _to) VALUES (
                     '$shuttle_name',
                     '$price',
                     '$passenger_capacity',
@@ -71,7 +79,9 @@ class Shuttles extends Base
                     '$thumbnail',
                     '$preview1',
                     '$preview2',
-                    '$preview3')";
+                    '$preview3',
+                    '$_from',
+                    '$_to')";
 
             $this->connection->exec($sql);
         }

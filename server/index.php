@@ -8,6 +8,13 @@ function getFooters()
 {
     require "./getFooter.php";
 }
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $from = $_POST["from"];
+    $destination = $_POST["destination"];
+    $date = $_POST["date"];
+    $return_date = $_POST["return_date"];
+    $passenger = $_POST["passenger"];
+}
 ?>
 
 <?php getHeaders(); ?>
@@ -27,30 +34,30 @@ function getFooters()
               </p> -->
                         <div class="row  gx-0">
                             <div class=" col-12 bg-white booking-form p-3 mt-3">
-                                <form class="row">
+                                <form class="row" action="/bookings.php" method="get">
                                     <div class="col-12 col-sm-12 col-md-4 col-lg-2 col-xxl-2">
                                         <label for="inputEmail4" class="form-label">From</label>
-                                        <input type="text" class="form-control" placeholder="Guatemala" id="inputEmail4" />
+                                        <input type="text" class="form-control" name="from" placeholder="Guatemala" id="inputEmail4" />
                                     </div>
                                     <div class="col-12 col-sm-12 col-md-4 col-lg-2 col-xxl-2">
                                         <label for="inputPassword4" class="form-label">Destination</label>
-                                        <input type="text" class="form-control" placeholder="Honduras" id="inputPassword4" />
+                                        <input type="text" name="destination" class="form-control" placeholder="Honduras" id="inputPassword4" />
                                     </div>
                                     <div class="col-12 col-sm-12 col-md-4 col-lg-2 col-xxl-2">
                                         <label for="date" class="form-label">Date</label>
-                                        <input type="date" class="form-control" id="date" />
+                                        <input type="date" name="date" class="form-control" id="date" />
                                     </div>
                                     <div class="col-12 col-sm-12 col-md-4 col-lg-2 col-xxl-2">
                                         <label for="return" class="form-label">Return Date</label>
-                                        <input type="date" class="form-control" id="return" />
+                                        <input type="date" name="return-date" class="form-control" id="return" />
                                     </div>
                                     <div class="col-12 col-sm-12 col-md-4 col-lg-2 col-xxl-2">
                                         <label for="passenger" class="form-label">Passenger</label>
-                                        <input type="number" class="form-control" placeholder="2 Passenger" value="Passenger" id="passenger" />
+                                        <input type="number" name="passenger" class="form-control" placeholder="2 Passenger" value="Passenger" id="passenger" />
                                     </div>
                                     <div class="col-12 col-sm-12 col-md-4 col-lg-2 col-xxl-2">
                                         <label for="passenger" class="form-label"></label>
-                                        <button class="btn main-btn text-center">Search</button>
+                                        <button type="submit" class="btn main-btn text-center">Search</button>
                                     </div>
 
                                     <div class="col-12 mt-3">
