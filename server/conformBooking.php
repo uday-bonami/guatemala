@@ -110,7 +110,11 @@ if ($isLogin) {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin: 5px
+            margin: 10px
+        }
+
+        div.shuttle-detaile>span {
+            font-size: 20px;
         }
 
         button.counter-btn {
@@ -204,8 +208,8 @@ if ($isLogin) {
                         <span>${{totalPrice}}</span>
                     </div>
                     <div class="buttons">
-                        <a style="background-color: #68EFEF; color: black; border: none" class="btn btn-primary" href="#" role="button">Book</a>
-                        <a class="btn btn-outline-info" href="#" role="button">Cancel</a>
+                        <a style="background-color: #68EFEF; color: black; border: none" class="btn btn-primary" href="/" role="button">Book</a>
+                        <a class="btn btn-outline-info" href="/" role="button">Cancel</a>
                     </div>
                 </div>
             </div>
