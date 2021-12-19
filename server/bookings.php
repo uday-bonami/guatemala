@@ -70,7 +70,7 @@ $shuttleData = $shuttle->read($to = $destination);
                             <h5 class="card-title"><?php echo $shuttle["shuttle_name"] ?></h5>
                             <p class="card-text"><?php echo $shuttle["discription"] ?></p>
                             <p class="card-text"><?php echo $shuttle["_from"] ?>-<?php echo $shuttle["_to"] ?></p>
-                            <a href="#" class="btn btn-primary btn-lg">Just at $<?php echo $shuttle["price"] ?></a>
+                            <a href="/conformBooking.php/?id=<?php echo $shuttle["id"] ?>" class="btn btn-primary btn-lg">View Seats</a>
                         </div>
                     </div>
                 </div>

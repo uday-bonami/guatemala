@@ -27,6 +27,17 @@ class Shuttles extends Base
         return $result;
     }
 
+    public function getShuttleById($id)
+    {
+        $sql = "SELECT * FROM " . $this->tableName . " WHERE " . "id=$id";
+
+        $stmt = $this->connection->prepare($sql);
+        $stmt->execute();
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $result = $stmt->fetchAll();
+        return $result;
+    }
+
     public function create($data)
     {
         if (
