@@ -5,6 +5,7 @@ $isLogin = isset($_SESSION["email"]);
 if ($isLogin) {
     $users = new Users();
     $userData = $users->read($_SESSION["email"])[0];
+    $profile_pic = $userData['profile_pic'] ? $userData["profile_pic"] : "/user_content/default.png";
 }
 ?>
 <!DOCTYPE html>
@@ -70,7 +71,7 @@ if ($isLogin) {
                         border-radius: 10px;padding: 10px 20px; color: white" class="sign-btn" href="/login.php">Sign in</a>
                 <?php else : ?>
                     <div class="profile">
-                        <img class="profile-picture" style="margin: 0px; width: 10%; height: 10%; border-radius: 50%" src="<?php echo $userData["profile_pic"]; ?>" alt="avatar" id="user-nav-p-img" />
+                        <img class="profile-picture" style="margin: 0px; width: 10%; height: 10%; border-radius: 50%" src="<?php echo $profile_pic; ?>" alt="avatar" id="user-nav-p-img" />
                         <div class="btn-group">
                             <button style="background-color: transparent; color: black; border: none;" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <?php echo $userData["username"] ?>

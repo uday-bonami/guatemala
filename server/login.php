@@ -18,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_SESSION["email"] = $email;
         $_SESSION["username"] = $userData["username"];
         $_SESSION["profile_pic"] = $userData["profile_pic"] ? "/" . $userData["profile_pic"] : "/user_content/default.png";
+        $_SESSION["user_id"] = $userData["id"];
         header("Location: /profile.php");
         die();
     } else {

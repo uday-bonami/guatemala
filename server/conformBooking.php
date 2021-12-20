@@ -10,6 +10,7 @@ $isLogin = isset($_SESSION["email"]);
 if ($isLogin) {
     $username = $_SESSION["username"];
     $profile_pic = $_SESSION["profile_pic"];
+    $userId = $_SESSION["user_id"];
 }
 ?>
 <!DOCTYPE html>
@@ -208,7 +209,7 @@ if ($isLogin) {
                         <span>${{totalPrice}}</span>
                     </div>
                     <div class="buttons">
-                        <a style="background-color: #68EFEF; color: black; border: none" class="btn btn-primary" href="/" role="button">Book</a>
+                        <button @click="book" style="background-color: #68EFEF; color: black; border: none" class="btn btn-primary">Book</button>
                         <a class="btn btn-outline-info" href="/" role="button">Cancel</a>
                     </div>
                 </div>
@@ -241,6 +242,10 @@ if ($isLogin) {
                         this.numberOfPassenger--;
                         this.totalPrice -= this.valuePerSeat;
                     }
+                },
+
+                book() {
+                    window.location.replace(`/greeting.php/?user_id=<?php echo $userId ?>&shuttle_id=<?php echo $shuttleId ?>&booking_price=${this.totalPrice}`);
                 }
             }
         });

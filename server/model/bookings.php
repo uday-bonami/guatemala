@@ -1,5 +1,5 @@
 <?php
-require $_SERVER["DOCUMENT_ROOT"] . "/model/base.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/model/base.php";
 
 class Bookings extends Base
 {
@@ -10,7 +10,7 @@ class Bookings extends Base
         if (!$userId) {
             $sql = "SELECT * FROM " . $this->tableName;
             $stmt = $this->connection->prepare($sql);
-			$stmt->execute();
+            $stmt->execute();
 
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             $result = $stmt->fetchAll();
@@ -35,15 +35,12 @@ class Bookings extends Base
 
     public function create($data)
     {
-        if (in_array("user_id", $data) && in_array("shuttle_name", $data) && in_array("from_", $data) && in_array("date", $data) && in_array("return_date", $data) && in_array("passenger", $data)) {
+        if (array_key_exists("user_id", $data) && array_key_exists("shuttle_id", $data) && array_key_exists("booking_price", $data)) {
             $user_id = $data["user_id"];
-            $shuttle_name = $data["shuttle_name"];
-            $from_ = $data["from_"];
-            $date = $data["date"];
-            $return_date = $data["return_date"];
-            $passenger = $data["passenger"];
+            $shuttle_id = $data["shuttle_id"];
+            $booking_price = $data["booking_price"];
 
-            $sql = "INSERT INTO " . $this->tableName . "(user_id, shuttle_name, from_, date, return_date, passenger) VALUES ($user_id, $shuttle_name, $from_, $date, $return_date, $passenger)";
+            $sql = "INSERT INTO " . $this->tableName . "(user_id, shuttle_id, booking_price) VALUES ('$user_id', '$shuttle_id', '$booking_price')";
             $this->connection->exec($sql);
             return true;
         }
