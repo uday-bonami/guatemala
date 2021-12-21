@@ -52,6 +52,8 @@ class Shuttles extends Base
             array_key_exists("preview3", $data) &&
             array_key_exists("discription", $data) &&
             array_key_exists("_to", $data) &&
+            array_key_exists("pickup_time", $data) &&
+            array_key_exists("arrival_time", $data) &&
             array_key_exists("_from", $data)
         ) {
             $shuttle_name = $data["shuttle_name"];
@@ -65,6 +67,8 @@ class Shuttles extends Base
             $preview2 = $data["preview2"];
             $preview3 = $data["preview3"];
             $discription = $data["discription"];
+            $pickup_time = $data["pickup_time"];
+            $arrival_time = $data["arrival_time"];
             $_from = $data["_from"];
             $_to = $data["_to"];
 
@@ -80,7 +84,9 @@ class Shuttles extends Base
                 preview2,
                 preview3,
                 _from,
-                _to) VALUES (
+                _to,
+                pickup_time,
+                arrival_time) VALUES (
                     '$shuttle_name',
                     '$price',
                     '$passenger_capacity',
@@ -92,7 +98,9 @@ class Shuttles extends Base
                     '$preview2',
                     '$preview3',
                     '$_from',
-                    '$_to')";
+                    '$_to',
+                    '$pickup_time',
+                    '$arrival_time')";
 
             $this->connection->exec($sql);
         }
@@ -156,7 +164,7 @@ class Shuttles extends Base
 
         if (in_array($fileType, $this->exceptedTypes)) {
             $imgSize = getimagesize($thumbnail["tmp_name"]);
-            if ($imgSize[0] === $imgSize[1] && $imgSize[0] < 1000 && $imgSize[1] < 1000) {
+            if ($imgSize[0] === $imgSize[1] && $imgSize[0] <= 1000 && $imgSize[1] <= 1000) {
                 $fileName = uniqid("", true) . "." . $fileType;
                 $fileDestination = $this->uploadDir . $fileName;
                 move_uploaded_file($thumbnail["tmp_name"], $fileDestination);

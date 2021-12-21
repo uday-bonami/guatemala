@@ -6,6 +6,7 @@ if (!isset($_SESSION["email"])) {
 }
 
 require "./model/users.php";
+require "./model/bookings.php";
 
 $email = $_SESSION["email"];
 
@@ -62,6 +63,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $userData = $users->read($email)[0];
+$booking = new Bookings();
+$totalBooking = $booking->read($userId = $userData["id"]);
 $profilePic = ($userData["profile_pic"]) ? $userData["profile_pic"] : "/user_content/default.png";
 
 
@@ -134,8 +137,8 @@ function getHeader()
             </div>
         </div>
     </div>
-    <div class="center" style="width: 100%; height: 375px">
-        <div class="card" style="width: 80%;height: 100%;padding: 0px;">
+    <div class="center" style="width: 100%">
+        <div class="card" style="width: 80%;min-height: 375px;padding: 0px;margin: 40px">
             <div class="tabs" style="grid-template-columns: 20% 80%;height: 100%;">
                 <div class="btn-section" style="width: 100%; height: 100%;display: block">
                     <div class="tabs-btn">
@@ -144,11 +147,41 @@ function getHeader()
                         <button class="tab-btn">Profile Settings</button>
                     </div>
                 </div>
-                <div class="content-section" style="padding: 20px">
+                <div class="content-section">
                     <div class="tabs-content">
-                        <div class="tab-content-active">test1</div>
+                        <div class="tab-content-active">
+                            <div class="table" style="box-shadow: none; overflow: auto; height: auto; margin-top: 0px">
+                                <div class="t-row thead">
+                                    <span class="t-data t-data-b">id</span>
+                                    <span class="t-data">Shuttle Name</span>
+                                    <span class="t-data">Date</span>
+                                    <span class="t-data">Return Date</span>
+                                    <span class="t-data">Total Passenger</span>
+                                    <span class="t-data">Booking price</span>
+                                    <span class="t-data">Cancel</span>
+                                </div>
+                                <?php foreach ($totalBooking as $_booking) : ?>
+                                    <div class="t-row t-body">
+                                        <span class="t-data t-data-b"><?php echo $_booking["id"] ?></span>
+                                        <span class="t-data"><?php echo $_booking["shuttle_name"] ?></span>
+                                        <span class="t-data"><?php echo $_booking["_date"] ?></span>
+                                        <span class="t-data"><?php echo $_booking["return_date"] ?></span>
+                                        <span class="t-data"><?php echo $_booking["total_passenger"] ?></span>
+                                        <span class="t-data">$<?php echo $_booking["booking_price"] ?></span>
+                                        <span class="t-data">
+                                            <a href="/delete.php/?user_id=<?php echo $userData['id'] ?>&booking_id=<?php echo $_booking["id"] ?>" class="btn cancle-btn btn-outline-danger">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                                                </svg>
+                                                Cancel
+                                            </a>
+                                        </span>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
                         <div class="tab-content">test2</div>
-                        <div class="tab-content">
+                        <div class="tab-content" style="padding: 20px">
                             <form action="/profile.php" method="post" style="display: block" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="input-username">Username</label>

@@ -34,6 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $to = $_POST["to"];
     $discription = $_POST["discription"];
     $returnDate = $_POST["return-date"];
+    $pickupTime = $_POST["pickup_time"];
+    $arrivalTime = $_POST["arrival-time"];
     $thumbnail = $_FILES["thumbnail"];
     $preview = $_FILES["preview"];
 
@@ -47,6 +49,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         "return_date" => $returnDate,
         "_from" => $from,
         "_to" => $to,
+        "pickup_time" => $pickupTime,
+        "arrival_time" => $arrivalTime,
     );
     $shuttles = new Shuttles();
 
@@ -110,11 +114,19 @@ $shuttles = getShuttles();
                         <input type="text" placeholder="Enter Shuttle Name" name="shuttle-name" class="c-input">
                         <input type="text" placeholder="from" name="from" class="c-input">
                         <input type="text" placeholder="to" name="to" class="c-input">
-                        <input type="number" placeholder="Enter Shuttle Price" name="shuttle-price" class="c-input">
+                        <input type="number" placeholder="Price per passenger" name="shuttle-price" class="c-input">
                         <input type="number" placeholder="Passenger capacity" name="capcity" class="c-input">
                         <div class="col">
-                            <input type="date" placeholder="Date" name="date" class="c-input">
-                            <input type="date" placeholder="Return Date" name="return-date" class="c-input">
+                            <label for="date">Date</label>
+                            <input type="date" id="date" placeholder="Date" name="date" class="c-input">
+                            <label for="return-date">Return Date</label>
+                            <input type="date" id="return-date" placeholder="Return Date" name="return-date" class="c-input">
+                        </div>
+                        <div class="col">
+                            <label for="pickup-time">Pickup Time</label>
+                            <input type="time" id="pickup-time" placeholder="Date" name="pickup_time" class="c-input">
+                            <label for="arrival-time">Arrival Time</label>
+                            <input type="time" id="arrival-time" placeholder="Return Date" name="arrival_time" class="c-input">
                         </div>
                         <textarea placeholder="Write a short discription" name="discription" rows="4" cols="50" style="margin-top: 0px;margin-bottom: 0px;height: 219px;border: 1px solid #0000009c;outline: none;border-radius: 5px;padding: 10px;"></textarea>
                         <div class="col" style="justify-content: space-between; margin: 10px">

@@ -1,6 +1,5 @@
 <?php
 session_start();
-// require "./model/users.php";
 require "./model/shuttles.php";
 
 $from = $_GET["from"];
@@ -8,6 +7,11 @@ $destination = $_GET["destination"];
 $date = $_GET["date"];
 $return_date = $_GET["return-date"];
 $passenger = $_GET["passenger"];
+
+if (!$from && !$destination && !$date && !$return_date && !$passenger) {
+    header("Location: /");
+    die();
+}
 
 $shuttle = new Shuttles();
 $shuttleData = $shuttle->read($to = $destination);
@@ -69,8 +73,13 @@ $shuttleData = $shuttle->read($to = $destination);
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $shuttle["shuttle_name"] ?></h5>
                             <p class="card-text"><?php echo $shuttle["discription"] ?></p>
-                            <p class="card-text"><?php echo $shuttle["_from"] ?>-<?php echo $shuttle["_to"] ?></p>
-                            <a href="/conformBooking.php/?id=<?php echo $shuttle["id"] ?>" class="btn btn-primary btn-lg">View Seats</a>
+                            <div class="col" style="align-items: center; margin: 20px">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#8a8a8a" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                                </svg>
+                                <p class="card-text"><?php echo $shuttle["_from"] ?>-<?php echo $shuttle["_to"] ?></p>
+                            </div>
+                            <a href="/conformBooking.php/?id=<?php echo $shuttle["id"] ?>&total_passenger=<?php echo $passenger ?>" class="btn btn-primary btn-lg">View Seats</a>
                         </div>
                     </div>
                 </div>

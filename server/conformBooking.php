@@ -4,13 +4,18 @@ require "./model/shuttles.php";
 
 $shuttle = new Shuttles();
 $shuttleId = $_GET["id"];
+$totalPassenger = $_GET["total_passenger"];
 $selectedShuttleData = $shuttle->getShuttleById($shuttleId)[0];
+$pricePerSeats = $selectedShuttleData["price"];
 
 $isLogin = isset($_SESSION["email"]);
 if ($isLogin) {
     $username = $_SESSION["username"];
     $profile_pic = $_SESSION["profile_pic"];
     $userId = $_SESSION["user_id"];
+} else {
+    header("Location: /login.php");
+    die();
 }
 ?>
 <!DOCTYPE html>
@@ -223,9 +228,9 @@ if ($isLogin) {
                     shuttleName: "<?php echo $selectedShuttleData["shuttle_name"]; ?>",
                     totalSeats: "<?php echo $selectedShuttleData["passenger_capacity"] ?>",
                     availableSeats: <?php echo 60 ?>,
-                    totalPrice: <?php echo 150 * 10 ?>,
-                    numberOfPassenger: <?php echo 150 ?>,
-                    valuePerSeat: 10
+                    totalPrice: <?php echo $_GET["total_passenger"] * $pricePerSeats ?>,
+                    numberOfPassenger: <?php echo $_GET["total_passenger"] ?>,
+                    valuePerSeat: <?php echo $pricePerSeats ?>
                 }
             },
 
@@ -245,7 +250,7 @@ if ($isLogin) {
                 },
 
                 book() {
-                    window.location.replace(`/greeting.php/?user_id=<?php echo $userId ?>&shuttle_id=<?php echo $shuttleId ?>&booking_price=${this.totalPrice}`);
+                    window.location.replace(`/greeting.php/?shuttle_id=<?php echo $shuttleId ?>&user_id=<?php echo $userId ?>&shuttle_name=<?php echo $selectedShuttleData["shuttle_name"] ?>&date=<?php echo $selectedShuttleData["_date"] ?>&return_date=<?php echo $selectedShuttleData["return_date"] ?>&booking_price=${this.totalPrice}&total_passenger=${this.numberOfPassenger}`);
                 }
             }
         });
