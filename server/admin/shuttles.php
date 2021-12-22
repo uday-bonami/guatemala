@@ -93,15 +93,6 @@ $shuttles = getShuttles();
             Add
         </button>
     </div>
-    <div class="c-container" style="padding: 0px 25px">
-        <div class="input-container">
-            <input type="text" style="border: none; width: 100%;margin: 0px" id="search" class="c-input" placeholder="Search by name" />
-            <svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 0 24 24" width="35px" fill="rgba(0, 0, 0, 0.67)">
-                <path d="M0 0h24v24H0z" fill="none" />
-                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
-            </svg>
-        </div>
-    </div>
     <div id="popup" style="display: none">
         <div class="card" style="box-shadow: none; width: 50%;height: 75%; overflow: scroll; position: relative;">
             <div class="close-btn">
@@ -137,7 +128,7 @@ $shuttles = getShuttles();
                         </div>
                         <div class="buttons">
                             <button class="btn c-button" type="submit">Submit</button>
-                            <a style="display: flex; align-items: center;" role="button" class="btn btn-outline-info popup-close">Cancel</a>
+                            <a style="display: flex; align-items: center;" role="button" class="btn btn-outline-info popup-cancel">Cancel</a>
                         </div>
                     </form>
                 </div>
@@ -181,12 +172,7 @@ $shuttles = getShuttles();
                             </div>
                             <div class="buttons">
                                 <button class="btn c-button" type="submit">Update</button>
-                                <button role="button" type="button" class="btn btn-outline-danger">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
-                                    </svg>
-                                    Delete
-                                </button>
+                                <a style="display: flex; align-items: center;" role="button" class="btn btn-outline-info popup-cancel">Cancel</a>
                             </div>
                         </form>
                     </div>

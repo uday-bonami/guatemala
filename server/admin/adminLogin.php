@@ -23,9 +23,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $password = $_POST["password"];
     $adminData = $users->getAdmins($email);
     if ($adminData[0]["role"] === "admin" || $adminData[0]["role"] === "supermeAdmin") {
-        if ($password === $adminData[0]["password"]) {
+        if (sha1($password) === $adminData[0]["password"]) {
             session_start();
             $_SESSION["admin_email"] = $email;
+            $_SESSION["username"] = $adminData[0]["username"];
+            $_SESSION["profile_pic"] = $adminData[0]["profile_pic"] ? $adminData[0]["profile_pic"] : "/user_content/default.png";
             redirect("/admin/");
         }
     } else {

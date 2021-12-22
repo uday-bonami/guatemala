@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+$isLogin = isset($_SESSION["admin_email"]);
+if ($isLogin) {
+    $username = $_SESSION["username"];
+    $profile_pic = $_SESSION["profile_pic"];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,21 +41,22 @@
         <div class="links">
             <a href="/admin">Dashboard</a>
             <a href="/admin/users.php">Users</a>
-            <a href="#">Bookings</a>
+            <a href="/admin/bookings.php">Bookings</a>
             <a href="/admin/shuttles.php">Shuttles</a>
-            <a href="#">Admins</a>
-            <a href="/admin/pages.php">Pages</a>
+            <a href="/admin/admin.php">Admins</a>
         </div>
     </div>
-    <div class="right-section">
+    <div class="right-section" style="display: flex; align-items: center;">
         <div class="profile">
-            <img class="profile-content" src="/img/avatar.svg" alt="admin-avatar" id="admin-nav-p-img" />
-            <span class="admin-name profile-content">Admin Name</span>
-            <div class="drop-down profile-content">
-                <svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 0 24 24" width="36px" fill="#1E3D57">
-                    <path d="M0 0h24v24H0z" fill="none" />
-                    <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z" />
-                </svg>
+            <img class="profile-picture" style="margin: 0px; width: 20%; height: 20%; border-radius: 50%" src="<?php echo $profile_pic; ?>" alt="avatar" id="user-nav-p-img" />
+            <div class="btn-group">
+                <button style="background-color: transparent; color: black; border: none;" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <?php echo $username ?>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/admin/adminProfile.php">View Profile</a></li>
+                    <li><a class="dropdown-item" href="/logout.php">Logout</a></li>
+                </ul>
             </div>
         </div>
     </div>

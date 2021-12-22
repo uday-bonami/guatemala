@@ -40,6 +40,8 @@ function startRipple() {
 function popupSetup() {
   const openButton = document.getElementById("open-popup");
   const popupCloseButtons = document.getElementsByClassName("popup-close");
+  const popupCancelButtons = document.getElementsByClassName("popup-cancel");
+
   if (openButton) {
     openButton.onclick = () => {
       const popup = document.getElementById("popup");
@@ -52,6 +54,18 @@ function popupSetup() {
     for (let button of popupCloseButtons) {
       button.onclick = (e) => {
         const popupCard = e.target.parentElement.parentElement;
+        const popup = popupCard.parentElement;
+        popup.style.display = "none";
+      };
+    }
+  }
+
+  if (popupCancelButtons.length !== 0) {
+    for (let popupCancelButton of popupCancelButtons) {
+      popupCancelButton.onclick = (e) => {
+        const popupCard =
+          e.target.parentElement.parentElement.parentElement.parentElement
+            .parentElement;
         const popup = popupCard.parentElement;
         popup.style.display = "none";
       };

@@ -1,9 +1,20 @@
 <?php
 session_start();
 require "../model/users.php";
+require "../model/bookings.php";
 
 $users = new Users();
+$bookings = new Bookings();
 $recentUsers = $users->getRecentUsers();
+$recentBookings = $bookings->getRecentBookings();
+
+function getUsername($userId)
+{
+    $users = new Users();
+    $userData = $users->getUserById($userId);
+    $username = $userData[0]['username'];
+    return $username;
+}
 
 if (!isset($_SESSION['admin_email'])) {
     header("Location: /admin/adminLogin.php");
@@ -27,30 +38,35 @@ function getFooter()
     }
 </style>
 <main>
-    <section class="statics">
-        <div class="cards">
-            <div class="card statics-card card-activate" style="background-color: #8CF0F0">
-                <h4 class="statics statics-card">120k</h4>
-                <span>Requests per day</span>
-            </div>
-            <div class="card statics-card">
-                <h4 class="statics ">129k</h4>
-                <span>New Users Register</span>
-            </div>
-            <div class="card statics-card">
-                <h4 class="statics">140k</h4>
-                <span>Booking Registers</span>
-            </div>
-        </div>
-        <section class="graph">
-            <div class="graph-container">
-                <div class="card" style="width:87%;margin-top: 20px;height: 471px;padding: 15px;box-shadow: 0px 4px 19px 4px rgba(0, 0, 0, 0.25);">
-                    <h5 class="card-title">Site traffic</h5>
-                    <canvas id="graph" style="height: 100%"></canvas>
+    <div class="cards" style="flex-direction: column;">
+        <h1>Site Pages</h1>
+        <div class="cards" style="padding: 20px">
+            <div class="card">
+                <img src="/img/about.svg" class="card-img-top" alt="about">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight: bold">About Page</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="/admin/editor" style="border-radius: 100px;padding: 5px 25px;border: none; background-color: #2F2E41;" class="btn btn-primary">Update</a>
                 </div>
             </div>
-        </section>
-    </section>
+            <div class="card">
+                <img src="/img/faq.svg" class="card-img-top" alt="faq">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight: bold">FAQ Page</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="/admin/editor" style="border-radius: 100px;padding: 5px 25px;border: none; background-color: #2F2E41;" class="btn btn-primary">Update</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="/img/blog.svg" class="card-img-top" alt="blog">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight: bold">Blog Page</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="/admin/editor" style="border-radius: 100px;padding: 5px 25px;border: none; background-color: #2F2E41;" class="btn btn-primary">Update</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <section class="users-bookings">
         <section id="join-users">
             <div class="card user-section" style="width: 100%;height: 678px">
@@ -82,19 +98,29 @@ function getFooter()
                     <h4 class="card-title">Most Recent Bookings</h4>
                 </div>
                 <div class="table" style="box-shadow: none; margin-top: 0px;">
-                    <div class="c-column c-thead">
-                        <span class="thead-data">Date</span>
-                        <span class="thead-data">From</span>
-                        <span class="thead-data">Destination</span>
-                        <span class="thead-data">Return Date</span>
-                        <span class="thead-data">Passenger</span>
-                        <span class="thead-data">Status</span>
+                    <div class="t-row thead">
+                        <span class="t-data t-data-b">id</span>
+                        <span class="t-data">username</span>
+                        <span class="t-data">Shuttle Name</span>
+                        <span class="t-data">Date</span>
+                        <span class="t-data">Return Date</span>
+                        <span class="t-data">Total Passenger</span>
+                        <span class="t-data">Booking price</span>
                     </div>
+                    <?php foreach ($recentBookings as $_booking) : ?>
+                        <div class="t-row t-body">
+                            <span class="t-data t-data-b"><?php echo $_booking["id"] ?></span>
+                            <span class="t-data"><?php echo getUsername($_booking['user_id']) ?></span>
+                            <span class="t-data"><?php echo $_booking["shuttle_name"] ?></span>
+                            <span class="t-data"><?php echo $_booking["_date"] ?></span>
+                            <span class="t-data"><?php echo $_booking["return_date"] ?></span>
+                            <span class="t-data"><?php echo $_booking["total_passenger"] ?></span>
+                            <span class="t-data">$<?php echo $_booking["booking_price"] ?></span>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </section>
     </section>
 </main>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.1/chart.min.js"></script>
-<script src="/js/chart.js"></script>
 <?php getFooter(); ?>

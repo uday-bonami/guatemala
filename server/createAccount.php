@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 "username" => $name,
                 "email" => $email,
                 "password" => $password,
-                "joining_date" => getdate(),
+                "joining_date" => date("d-m-Y"),
                 "role" => "user",
             );
             $users->create($data);

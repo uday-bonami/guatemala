@@ -32,6 +32,16 @@ class Bookings extends Base
         return $result;
     }
 
+    public function getRecentBookings()
+    {
+        $sql = "SELECT * FROM " . $this->tableName . " ORDER BY ID DESC LIMIT 1, 10";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        return $result;
+    }
+
     public function update($updatedData, $user_id)
     {
         $updatedFeild = $updatedData["updateFeild"];

@@ -26,11 +26,21 @@ class Users extends Base
         } else {
             $sql = "SELECT * FROM " . $this->tableName . " WHERE email='$userEmail'";
             $stmt =  $this->connection->prepare($sql);
-            $stmt->execute();
 
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            $stmt->execute();
             $result = $stmt->fetchAll();
         }
+        return $result;
+    }
+
+    public function getAllAdminUsers()
+    {
+        $sql = "SELECT * FROM " . $this->tableName . " WHERE role = 'admin' OR role = 'supermeAdmin'";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
         return $result;
     }
 
@@ -73,6 +83,7 @@ class Users extends Base
             array_key_exists("username", $data) &&
             array_key_exists("password", $data) &&
             array_key_exists("email", $data) &&
+            array_key_exists("role", $data) &&
             array_key_exists("joining_date", $data)
         ) {
             $username = $data["username"];
@@ -80,6 +91,7 @@ class Users extends Base
             $password = $data["password"];
             $joining_date = $data["joining_date"];
             $role = $data["role"];
+
             $sql = "INSERT INTO " . $this->tableName . "(
                 username,
                 email, 
@@ -100,7 +112,7 @@ class Users extends Base
 
     public function delete($user_id)
     {
-        $sql = "DELETE FROM " . $this->tableName . "WHERE id = $user_id";
+        $sql = "DELETE FROM " . $this->tableName . " WHERE id = '$user_id'";
         $this->connection->exec($sql);
     }
 }
