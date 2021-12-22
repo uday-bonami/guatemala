@@ -50,11 +50,10 @@ function popupSetup() {
   }
   if (popupCloseButtons.length !== 0) {
     for (let button of popupCloseButtons) {
-      button.onclick = () => {
-        const popup = document.getElementById("popup");
-        if (popup) {
-          popup.style.display = "none";
-        }
+      button.onclick = (e) => {
+        const popupCard = e.target.parentElement.parentElement;
+        const popup = popupCard.parentElement;
+        popup.style.display = "none";
       };
     }
   }

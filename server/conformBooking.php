@@ -1,10 +1,14 @@
 <?php
 session_start();
 require "./model/shuttles.php";
+require "./calculateBookings.php";
 
 $shuttle = new Shuttles();
 $shuttleId = $_GET["id"];
 $totalPassenger = $_GET["total_passenger"];
+$calculateAvailableSeats = new CalculateAvailableSeats($shuttleId);
+$availableSeats = $calculateAvailableSeats->getTotalSeats();
+
 $selectedShuttleData = $shuttle->getShuttleById($shuttleId)[0];
 $pricePerSeats = $selectedShuttleData["price"];
 
@@ -193,6 +197,14 @@ if ($isLogin) {
                         <span>{{availableSeats}}</span>
                     </div>
                     <div class="shuttle-detaile">
+                        <span>Pickup Time:</span>
+                        <span><?php echo $selectedShuttleData["pickup_time"] ?></span>
+                    </div>
+                    <div class="shuttle-detaile">
+                        <span>Arrival Time:</span>
+                        <span><?php echo $selectedShuttleData["arrival_time"] ?></span>
+                    </div>
+                    <div class="shuttle-detaile">
                         <span>Number of pasenger:</span>
                         <div class="counter">
                             <button @click="add" type="button" class="counter-btn">
@@ -227,7 +239,7 @@ if ($isLogin) {
                 return {
                     shuttleName: "<?php echo $selectedShuttleData["shuttle_name"]; ?>",
                     totalSeats: "<?php echo $selectedShuttleData["passenger_capacity"] ?>",
-                    availableSeats: <?php echo 60 ?>,
+                    availableSeats: <?php echo $availableSeats ?>,
                     totalPrice: <?php echo $_GET["total_passenger"] * $pricePerSeats ?>,
                     numberOfPassenger: <?php echo $_GET["total_passenger"] ?>,
                     valuePerSeat: <?php echo $pricePerSeats ?>

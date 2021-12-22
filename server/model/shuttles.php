@@ -7,9 +7,9 @@ class Shuttles extends Base
     private $exceptedTypes = array("jpg", "png", "jpeg");
     private $uploadDir = "../shuttles_imgs/";
 
-    public function read($to = null)
+    public function read($to = null, $from = null, $date = null)
     {
-        if (!$to) {
+        if (!$to && !$from && !$date) {
             $sql = "SELECT * FROM " . $this->tableName;
             $stmt = $this->connection->prepare($sql);
             $stmt->execute();
@@ -17,7 +17,7 @@ class Shuttles extends Base
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             $result = $stmt->fetchAll();
         } else {
-            $sql = "SELECT * FROM " . $this->tableName . " WHERE " . "_to='$to'";
+            $sql = "SELECT * FROM " . $this->tableName . " WHERE " . "_to='$to' AND _from='$from' AND _date='$date'";
 
             $stmt = $this->connection->prepare($sql);
             $stmt->execute();
@@ -32,8 +32,8 @@ class Shuttles extends Base
         $sql = "SELECT * FROM " . $this->tableName . " WHERE " . "id=$id";
 
         $stmt = $this->connection->prepare($sql);
-        $stmt->execute();
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $stmt->execute();
         $result = $stmt->fetchAll();
         return $result;
     }
@@ -113,8 +113,9 @@ class Shuttles extends Base
         $data = $updatedData["data"];
         foreach ($updatedFeild as $feild) {
             $d = $data[$feild];
-            $sql = "UPDATE " . $this->tableName . " SET $feild = $d WHERE id = $id";
-            $this->connection->query($sql);
+            $sql = "UPDATE " . $this->tableName . " SET $feild='$d' WHERE id='$id'";
+            $stmt =  $this->connection->prepare($sql);
+            $stmt->execute();
         }
     }
 

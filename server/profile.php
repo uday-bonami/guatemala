@@ -143,7 +143,6 @@ function getHeader()
                 <div class="btn-section" style="width: 100%; height: 100%;display: block">
                     <div class="tabs-btn">
                         <button class="tab-btn active">Bookings</button>
-                        <button class="tab-btn"> Cancled Bookings</button>
                         <button class="tab-btn">Profile Settings</button>
                     </div>
                 </div>
@@ -180,7 +179,6 @@ function getHeader()
                                 <?php endforeach; ?>
                             </div>
                         </div>
-                        <div class="tab-content">test2</div>
                         <div class="tab-content" style="padding: 20px">
                             <form action="/profile.php" method="post" style="display: block" enctype="multipart/form-data">
                                 <div class="form-group">

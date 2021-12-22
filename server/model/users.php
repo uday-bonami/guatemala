@@ -57,6 +57,16 @@ class Users extends Base
         }
     }
 
+    public function getRecentUsers()
+    {
+        $sql = "SELECT * FROM " . $this->tableName . " ORDER BY ID DESC LIMIT 1, 10";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        return $result;
+    }
+
     public function create($data)
     {
         if (

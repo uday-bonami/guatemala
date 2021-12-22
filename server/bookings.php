@@ -1,6 +1,7 @@
 <?php
 session_start();
 require "./model/shuttles.php";
+require "./filterShuttle.php";
 
 $from = $_GET["from"];
 $destination = $_GET["destination"];
@@ -8,13 +9,16 @@ $date = $_GET["date"];
 $return_date = $_GET["return-date"];
 $passenger = $_GET["passenger"];
 
+
 if (!$from && !$destination && !$date && !$return_date && !$passenger) {
     header("Location: /");
     die();
 }
 
 $shuttle = new Shuttles();
-$shuttleData = $shuttle->read($to = $destination);
+$_shuttleData = $shuttle->read($to = $destination, $from = $from, $date = $date);
+$filterShuttle = new FilterShuttle($_shuttleData, $passenger);
+$shuttleData = $filterShuttle->getShuttles();
 ?>
 <?php require "./userHeader.php" ?>
 <div class="banner">

@@ -22,8 +22,18 @@ class CalculateAvailableSeats
     private function getTotalBookings()
     {
         $booking = $this->bookings->getBookingByShuttleId($this->shuttleId);
-        $totalBooking = count($booking);
+        $totalBooking = $this->calculateBookings($booking);
         return $totalBooking;
+    }
+
+    private function calculateBookings($bookings, $i = 0, $sum = 0)
+    {
+        if ($i !== count($bookings)) {
+            $sum += $bookings[$i]["total_passenger"];
+            $i++;
+            return $this->calculateBookings($bookings, $i = $i, $sum = $sum);
+        }
+        return $sum;
     }
 
     public function getTotalSeats()

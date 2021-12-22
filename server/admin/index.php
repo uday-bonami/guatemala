@@ -1,5 +1,10 @@
 <?php
 session_start();
+require "../model/users.php";
+
+$users = new Users();
+$recentUsers = $users->getRecentUsers();
+
 if (!isset($_SESSION['admin_email'])) {
     header("Location: /admin/adminLogin.php");
     die();
@@ -16,6 +21,11 @@ function getFooter()
 ?>
 
 <?php getHeader(); ?>
+<style>
+    img.avatar {
+        border-radius: 50%;
+    }
+</style>
 <main>
     <section class="statics">
         <div class="cards">
@@ -48,32 +58,21 @@ function getFooter()
                     <h4 class="card-title">Recently Joined Users</h4>
                 </div>
                 <div class="list-container">
-                    <div class="list">
-                        <div class="avatar-container">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="rgb(236, 236, 236)" class="bi bi-person-fill" viewBox="0 0 16 16">
-                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                            </svg>
+                    <?php foreach ($recentUsers as $user) : ?>
+                        <div class="list">
+                            <div class="avatar-container" style="background-color: transparent">
+                                <?php if ($user['profile_pic']) : ?>
+                                    <img class="avatar" width="80px" height="80px" src="<?php echo "/" . $user['profile_pic'] ?>" alt="profile-pic">
+                                <?php else : ?>
+                                    <img class="avatar" width="80px" height="80px" src="/user_content/default.png" alt="profile-pic">
+                                <?php endif; ?>
+                            </div>
+                            <div class="details">
+                                <h5><?php echo $user['username'] ?></h5>
+                                <span class="subtitle"><?php echo $user["email"] ?></span>
+                            </div>
                         </div>
-                        <div class="details">
-                            <h5>Users Name</h5>
-                            <span class="subtitle">username@mail.com</span>
-                        </div>
-                    </div>
-                    <div class="list">
-                        <div class="avatar-container">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="rgb(236, 236, 236)" class="bi bi-person-fill" viewBox="0 0 16 16">
-                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                            </svg>
-                        </div>
-                        <div class="details">
-                            <h5>Users Name</h5>
-                            <span class="subtitle">username@mail.com</span>
-                        </div>
-                    </div>
-                    <div class="list"></div>
-                    <div class="list"></div>
-                    <div class="list"></div>
-                    <div class="list"></div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </section>
